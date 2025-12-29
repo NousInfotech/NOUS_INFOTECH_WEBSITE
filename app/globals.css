@@ -1,26 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #c552ec;
+  
+  --background: var(--black);
+  --foreground: var(--white);
+}
+
+[data-theme='light'] {
+  --background: var(--white);
+  --foreground: var(--black);
 }
 
 @theme inline {
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-primary: var(--primary);
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
+
+
+/* CTA Border Animation */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer utilities {
+  @keyframes border-beam {
+    to {
+      --border-angle: 360deg;
+    }
+  }
+
+  .border-beam {
+    --border-width: 2px;
+    --border-color: var(--primary);
+    --border-bg: var(--background);
+    
+    position: relative;
+    border-radius: 1rem;
+    padding: var(--border-width);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05); /* Subtle base border */
+  }
+
+  .border-beam::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--border-width);
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 70%,
+      var(--border-color) 85%,
+      transparent 100%
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: border-beam 6s linear infinite;
+    pointer-events: none;
+  }
+
+  .border-beam-content {
+    @apply bg-background rounded-[calc(1rem-var(--border-width))] w-full h-full relative z-10;
+  }
+}
+
