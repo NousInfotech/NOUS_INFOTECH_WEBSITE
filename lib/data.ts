@@ -2,63 +2,105 @@ import { BarChart, Code, Globe, Megaphone, Palette, Smartphone, Zap } from "luci
 
 // Projects Data
 export const projects = [
-  {
-    title: "TaskFlow Pro",
-    category: "Full-Stack | SaaS Platform",
-    image: "https://images.pexels.com/photos/3184346/pexels-photo-3184346.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/taskflow-pro",
-  },
-  {
-    title: "ShopVerse Commerce",
-    category: "Full-Stack | E-commerce",
-    image: "https://images.pexels.com/photos/5632403/pexels-photo-5632403.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/shopverse",
-  },
-  {
-    title: "FinTrack Cloud",
-    category: "Fintech | Analytics Dashboard",
-    image: "https://images.pexels.com/photos/6476586/pexels-photo-6476586.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/fintrack-cloud",
-  },
-  {
-    title: "EstateHub Suite",
-    category: "Real Estate | Web Platform",
-    image: "https://images.pexels.com/photos/8292837/pexels-photo-8292837.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/estatehub",
-  },
-  {
-    title: "ClinicSync",
-    category: "Healthcare | Appointment System",
-    image: "https://images.pexels.com/photos/6476586/pexels-photo-6476586.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/clinicsync",
-  },
-  {
-    title: "EduSphere LMS",
-    category: "Learning Management System",
-    image: "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/edusphere",
-  },
-  {
-    title: "ChefMate Delivery",
-    category: "Food Delivery | MERN App",
-    image: "https://images.pexels.com/photos/4393669/pexels-photo-4393669.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/chefmate",
-  },
-  {
-    title: "WorkBloc HR",
-    category: "HRMS / Payroll System",
-    image: "https://images.pexels.com/photos/5439474/pexels-photo-5439474.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    link: "/projects/workbloc",
-  },
-];
-// Home Projects Data
-export const homeProjects = [
-  { title: "Lumina XR", category: "Spatial Design", year: "2024" },
-  { title: "Nebula OS", category: "Core Development", year: "2023" },
-  { title: "Aetherial", category: "Identity", year: "2023" },
-  { title: "Onyx Forge", category: "E-Commerce", year: "2024" },
-  { title: "Prism Lab", category: "Analytics", year: "2023" },
-  { title: "Vortex Pro", category: "Platform", year: "2024" },
+{
+  title: "Space Sculpt",
+  category: "Website | Development",
+  image: "/project-images/spacesculpt.png",
+  link: "https://space-sculpt.vercel.app/",
+  year: 2024,
+},
+{
+  title: "DBQ Pro",
+  category: "Website | Development",
+  image: "/project-images/dbq-pro.png",
+  link: "https://dbq-pro-puce.vercel.app/",
+  year: 2023,
+},
+{
+  title: "LED Display UAE",
+  category: "Website | Development",
+  image: "/project-images/uae-led.png",
+  link: "https://www.leddisplayuae.com/",
+  year: 2022,
+},
+{
+  title: "Alghwasa",
+  category: "Website | Development",
+  image: "/project-images/alghwasa.png",
+  link: "https://www.alghwasa.com/",
+  year: 2024,
+},
+{
+  title: "Honesty Engineering Works",
+  category: "Website | Development",
+  image: "/project-images/honesty.png",
+  link: "https://www.honestyengineering.in/",
+  year: 2021,
+},
+{
+  title: "Pop and Palm",
+  category: "Website | Development",
+  image: "/project-images/pop-and-palm.png",
+  link: "https://www.popandpalmevents.com/",
+  year: 2023,
+},
+{
+  title: "Pixel World",
+  category: "Website | Development",
+  image: "/project-images/pixel-world.png",
+  link: "https://www.pixelworld.ae/",
+  year: 2024,
+},
+{
+  title: "EOM",
+  category: "Website | Development",
+  image: "/project-images/eom.png",
+  link: "https://www.entrepreneursofmadras.com/",
+  year: 2023,
+},
+{
+  title: "SunnySide Up",
+  category: "Website | Development",
+  image: "/project-images/sunny-side.png",
+  link: "https://sunnysidecafe.vercel.app/",
+  year: 2024,
+},
+{
+  title: "Kind Rice",
+  category: "Website | Development",
+  image: "/project-images/kind-rice.png",
+  link: "https://www.kindrice.co/",
+  year: 2022,
+},
+{
+  title: "Zarak Media",
+  category: "Website | Development",
+  image: "/project-images/zarak.png",
+  link: "https://codeerr-sid.github.io/Zarak_Media/",
+  year: 2021,
+},
+{
+  title: "Braai Shack",
+  category: "Website | Development",
+  image: "/project-images/braai.png",
+  link: "https://braaishack.vercel.app/",
+  year: 2024,
+},
+{
+  title: "Sri Varsha",
+  category: "Website | Development",
+  image: "/project-images/srivarsha.png",
+  link: "https://sri-varsha.vercel.app/index.html",
+  year: 2020,
+},
+{
+  title: "Prepco Healthcare",
+  category: "Website | Development",
+  image: "/project-images/prepco.png",
+  link: "https://prepcohealthcare.com/",
+  year: 2023,
+},
+
 ];
 // Expertise Data
 export const expertiseData = [

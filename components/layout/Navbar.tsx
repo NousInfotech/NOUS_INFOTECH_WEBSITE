@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -20,6 +21,12 @@ const navLinks = [
 export const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    Promise.resolve().then(() => setMounted(true));
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-9999 bg-background/80 backdrop-blur-xs border-b border-foreground/10">
@@ -27,7 +34,7 @@ export const Navbar = () => {
         <Link href="/" className="flex items-center gap-1 group">
           <div className="w-[150px] relative transition-all duration-500 group-hover:scale-105">
             <Image 
-              src="/logo/lettermark.png" 
+              src={mounted && (theme === "dark") ? "/logo/dark-logo-removebg-preview.png" : "/logo/lettermark.png"} 
               alt="NOUS Logo" 
               width={200}
               height={200}

@@ -46,7 +46,7 @@ useEffect(() => {
   };
 }, []);
   return (
-      <section className="relative py-15 flex flex-col lg:flex-row items-center px-5 md:px-10 overflow-hidden gap-5">
+      <section className="relative py-10 md:py-15 flex flex-col lg:flex-row items-center px-5 md:px-10 overflow-hidden gap-5">
         {/* Background Video */}
         <div className="absolute inset-0 z-0 h-full">
           <video 

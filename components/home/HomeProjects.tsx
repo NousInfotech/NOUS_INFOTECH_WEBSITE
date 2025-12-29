@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "../ui/Button";
 import { ScrollReveal } from "../animation/ScrollReveal";
 import { projects } from "@/lib/data";
@@ -17,8 +17,9 @@ const HomeProjects = () => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Constants for speed and width
-  const speed = 40; // Higher is slower
-  const totalWidth = projects.length * 482; // 450px width + 32px gap
+  const homeProjects = projects.slice(0, 8);
+  const speed = 80; // Higher is slower (was 40)
+  const totalWidth = homeProjects.length * 570; // 450px width + 32px gap
 
   const startAnimation = useCallback((currentX: number) => {
     const animate = async (startX: number) => {
@@ -104,15 +105,15 @@ const HomeProjects = () => {
             onDragEnd={handleDragEnd}
           >
             {/* Double the projects for infinite scroll feel during drag */}
-            {[...projects, ...projects].map((project, index) => (
+            {[...homeProjects, ...homeProjects].map((project, index) => (
                <div key={index} className="flex-none w-[350px] md:w-[450px]">
-                  <div className="relative aspect-4/4 overflow-hidden rounded-3xl border border-foreground/10 group select-none">
+                  <div className="relative aspect-video overflow-hidden rounded-3xl border border-foreground/10 group select-none">
                     <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover transition-opacity duration-300 group-hover:opacity-80 pointer-events-none"
+                        className="object-cover object-top transition-opacity duration-300 group-hover:opacity-80 pointer-events-none"
                       />
                     </div>
                     
@@ -120,20 +121,20 @@ const HomeProjects = () => {
 
                     <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end">
                       <div className="flex items-center justify-between">
-                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
-                          <span className="text-sm font-medium text-primary uppercase tracking-widest mb-2 block">
+                        <div className="pointer-events-none">
+                          <span className="text-sm font-medium text-primary uppercase tracking-widest mb-1 block opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                             {project.category}
                           </span>
-                          <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
+                          <h3 className="text-2xl font-semibold text-white tracking-tight">
                             {project.title}
                           </h3>
                         </div>
                         
-                        {/* <Link href={project.link} className="z-20">
+                        <Link href={project.link} target="_blank" className="z-20">
                           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white/20">
                             <ArrowUpRight className="text-white w-5 h-5 md:w-6 md:h-6" />
                           </div>
-                        </Link> */}
+                        </Link>
                       </div>
                     </div>
                   </div>

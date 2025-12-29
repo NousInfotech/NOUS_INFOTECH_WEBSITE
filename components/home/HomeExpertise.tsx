@@ -41,7 +41,7 @@ const HomeExpertise = () => {
                   <div className="mb-8 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
                     <item.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="md:text-2xl text-xl font-semibold mb-4 tracking-tight group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-foreground/60 leading-relaxed font-light">
@@ -49,7 +49,7 @@ const HomeExpertise = () => {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="mt-8 pt-8 border-t border-foreground/5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                    <Link href={`/expertise#${item.title.toLowerCase().replace(/ /g, '-')}`} className="flex items-center text-sm font-medium group/link">
                       Learn More <ArrowRight className="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                    </Link>

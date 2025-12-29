@@ -2,8 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    Promise.resolve().then(() => setMounted(true));
+  }, []);
+
   return (
     <footer className="bg-background border-t border-foreground/10 py-20 px-6 mt-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -11,7 +20,7 @@ export const Footer = () => {
           <Link href="/" className="text-3xl font-bold tracking-tighter mb-6 block">
           <div className="w-[150px] relative transition-all duration-500 group-hover:scale-105">
             <Image 
-              src="/logo/lettermark.png" 
+              src={mounted && (theme === "dark") ? "/logo/dark-logo-removebg-preview.png" : "/logo/lettermark.png"} 
               alt="NOUS Logo" 
               width={200}
               height={200}
