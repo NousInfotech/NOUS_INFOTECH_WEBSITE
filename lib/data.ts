@@ -1,4 +1,4 @@
-import { Code, Globe, Megaphone, Palette } from "lucide-react";
+import { BarChart, Code, Globe, Megaphone, Palette, Smartphone, Zap } from "lucide-react";
 
 // Projects Data
 export const projects = [
@@ -51,6 +51,15 @@ export const projects = [
     link: "/projects/workbloc",
   },
 ];
+// Home Projects Data
+export const homeProjects = [
+  { title: "Lumina XR", category: "Spatial Design", year: "2024" },
+  { title: "Nebula OS", category: "Core Development", year: "2023" },
+  { title: "Aetherial", category: "Identity", year: "2023" },
+  { title: "Onyx Forge", category: "E-Commerce", year: "2024" },
+  { title: "Prism Lab", category: "Analytics", year: "2023" },
+  { title: "Vortex Pro", category: "Platform", year: "2024" },
+];
 // Expertise Data
 export const expertiseData = [
   {
@@ -79,3 +88,60 @@ export const expertiseData = [
   },
   
 ];
+// Services Data
+export const services = [
+  { title: "Web Development", desc: "Performance-first web applications built with the latest technologies.", icon: Globe },
+  { title: "UI/UX Design", desc: "Intuitive and beautiful user interfaces that maximize engagement.", icon: Palette },
+  { title: "Brand Strategy", desc: "Defining your digital identity and positioning for market success.", icon: Zap },
+  { title: "Mobile Apps", desc: "High-quality native and cross-platform mobile experiences.", icon: Smartphone },
+  { title: "SEO Optimization", desc: "Technical SEO to ensure your brand reaches the right audience.", icon: BarChart },
+  { title: "FullStack Systems", desc: "Complex backend architectures integrated with seamless frontends.", icon: Code },
+];
+// Packages Data
+export const packages = [
+  {
+    name: "Basic",
+    price: "₹4999",
+    description: "Perfect for startups and simple digital presence.",
+    features: [
+      "Single Page Website",
+      "Responsive Design",
+      "Basic SEO Setup",
+      "Contact Form Integration",
+      "2 Rounds of Revisions",
+    ],
+    buttonText: "Start Basic Plan",
+    popular: false,
+  },
+  {
+    name: "Standard",
+    price: "₹14999",
+    description: "The complete solution for growing businesses.",
+    features: [
+      "Up to 5 Pages",
+      "Custom UI/UX Design",
+      "CMS Integration",
+      "Speed Optimization",
+      "Advanced SEO",
+      "5 Rounds of Revisions",
+    ],
+    buttonText: "Choose Standard",
+    popular: true,
+  },
+  {
+    name: "Premium",
+    price: "₹19999",
+    description: "Enterprise-grade digital experiences.",
+    features: [
+      "Fully Custom Web App",
+      "E-commerce Functionality",
+      "Premium Animations",
+      "Database Integration",
+      "Priority 24/7 Support",
+      "Unlimited Revisions",
+    ],
+    buttonText: "Get Premium",
+    popular: false,
+  },
+];
+

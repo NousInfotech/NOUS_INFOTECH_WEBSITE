@@ -2,16 +2,7 @@
 
 import { PageWrapper } from "@/components/animation/PageWrapper";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
-import { Code, Palette, Zap, Globe, Smartphone, BarChart } from "lucide-react";
-
-const services = [
-  { title: "Web Development", desc: "Performance-first web applications built with the latest technologies.", icon: Globe },
-  { title: "UI/UX Design", desc: "Intuitive and beautiful user interfaces that maximize engagement.", icon: Palette },
-  { title: "Brand Strategy", desc: "Defining your digital identity and positioning for market success.", icon: Zap },
-  { title: "Mobile Apps", desc: "High-quality native and cross-platform mobile experiences.", icon: Smartphone },
-  { title: "SEO Optimization", desc: "Technical SEO to ensure your brand reaches the right audience.", icon: BarChart },
-  { title: "FullStack Systems", desc: "Complex backend architectures integrated with seamless frontends.", icon: Code },
-];
+import { services } from "@/lib/data";
 
 const Expertise = () => {
   return (

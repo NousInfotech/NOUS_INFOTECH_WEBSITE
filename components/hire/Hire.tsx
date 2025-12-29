@@ -3,59 +3,11 @@
 import { PageWrapper } from "@/components/animation/PageWrapper";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import { Button } from "@/components/ui/Button";
-
+import { packages } from "@/lib/data";
 import { ArrowRight, Check } from "lucide-react";
 
 const categories = ["Web Development", "UI/UX Design", "Branding", "Mobile App", "Other"];
 const budgets = ["₹50k - ₹1L", "₹1L - ₹2.5L", "₹2.5L - ₹5L", "₹5L+"];
-
-const packages = [
-  {
-    name: "Basic",
-    price: "₹4999",
-    description: "Perfect for startups and simple digital presence.",
-    features: [
-      "Single Page Website",
-      "Responsive Design",
-      "Basic SEO Setup",
-      "Contact Form Integration",
-      "2 Rounds of Revisions",
-    ],
-    buttonText: "Start Basic Plan",
-    popular: false,
-  },
-  {
-    name: "Standard",
-    price: "₹14999",
-    description: "The complete solution for growing businesses.",
-    features: [
-      "Up to 5 Pages",
-      "Custom UI/UX Design",
-      "CMS Integration",
-      "Speed Optimization",
-      "Advanced SEO",
-      "5 Rounds of Revisions",
-    ],
-    buttonText: "Choose Standard",
-    popular: true,
-  },
-  {
-    name: "Premium",
-    price: "₹19999",
-    description: "Enterprise-grade digital experiences.",
-    features: [
-      "Fully Custom Web App",
-      "E-commerce Functionality",
-      "Premium Animations",
-      "Database Integration",
-      "Priority 24/7 Support",
-      "Unlimited Revisions",
-    ],
-    buttonText: "Get Premium",
-    popular: false,
-  },
-];
-
 const Hire = () => {
   return (
     <PageWrapper>
