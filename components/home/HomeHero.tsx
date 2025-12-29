@@ -46,9 +46,9 @@ useEffect(() => {
   };
 }, []);
   return (
-      <section className="relative h-[90vh] flex items-center px-10 overflow-hidden">
+      <section className="relative py-15 flex flex-col lg:flex-row items-center px-5 md:px-10 overflow-hidden gap-5">
         {/* Background Video */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 h-full">
           <video 
             ref={video1}
             autoPlay 
@@ -68,39 +68,40 @@ useEffect(() => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className='space-y-7'
           >
-            <h1 className="text-6xl md:text-8xl leading-none tracking-tighter mb-8 font-medium">
-              We&apos;re a creative <br />
-              <span className="text-primary">digital agency</span>
+            <h1 className="text-2xl md:text-5xl lg:text-8xl leading-none tracking-tighter font-medium">
+              We&apos;re a creative
+              <span className="text-primary"> digital agency</span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-xl mb-12 uppercase tracking-wide">
+            <p className="text-xs md:text-xl text-foreground/70 max-w-xl uppercase tracking-wide">
               We&apos;re a creative digital agency dedicated to crafting high-end digital experiences that define industries.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex md:flex-row flex-col gap-4">
               <Link href="/hire">
-                <Button className='text-white'>Hire Our Agency</Button>
+                <Button className='text-white w-full'>Hire Our Agency</Button>
               </Link>
               <Link href="/projects">
-                <Button variant="outline">View Projects</Button>
+                <Button variant="outline" className='w-full'>View Projects</Button>
               </Link>
             </div>
           </motion.div>
         </div>
         
- <div className="z-100 w-full">
-  <video
-    ref={video2}
-    autoPlay
-    muted
-    playsInline
-    className="
-      w-full h-[500px] 
-      object-cover                   
-      rounded-2xl"
-  >
-    <source src="/video/Home-video.mp4" type="video/mp4" />
-  </video>
-</div>
+        <div className="z-100 w-full">
+        <video
+        ref={video2}
+        autoPlay
+        muted
+        playsInline
+        className="
+        w-full md:h-[500px] 
+        object-cover                   
+        rounded-2xl"
+        >
+        <source src="/video/Home-video.mp4" type="video/mp4" />
+        </video>
+        </div>
 
      </section>
   )

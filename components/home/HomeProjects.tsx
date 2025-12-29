@@ -70,19 +70,19 @@ const HomeProjects = () => {
   };
 
   return (
-    <section className="pb-32 px-10 bg-background relative overflow-hidden">
+    <section className="pb-10 px-5 md:px-10 bg-background relative overflow-hidden">
       <div className="mx-auto relative z-10">
         <ScrollReveal>
           <div className="mb-10 px-2">
             <div className="inline-block mb-6 px-4 py-2 bg-foreground/5 rounded-full border border-foreground/10 backdrop-blur-sm">
               <span className="text-sm font-semibold tracking-wider opacity-80 text-primary uppercase">Projects</span>
             </div>
-            <div className="flex items-center justify-between gap-1.5 flex-wrap">
-              <h2 className="text-5xl md:text-7xl font-medium leading-tight tracking-tighter">
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <h2 className="text-2xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tighter">
                 Crafting digital
                 <span className="text-primary"> excellence.</span>
               </h2>
-              <Link href="/projects">
+              <Link href="/projects" className="hidden md:block">
                 <Button variant="outline" className="group">
                   View All Projects
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -142,8 +142,19 @@ const HomeProjects = () => {
           </motion.div>
 
           {/* Side Fades for Premium Look */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-background to-transparent z-20 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-background to-transparent z-20 pointer-events-none" />
+          {/* <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-background to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-background to-transparent z-20 pointer-events-none" /> */}
+        </div>
+
+        <div className="md:hidden mt-10">
+          <ScrollReveal delay={0.4}>
+            <Link href="/projects" className="flex items-center justify-center">
+              <Button variant="outline">
+                View All Projects
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </ScrollReveal>
         </div>
       </div>
     </section>

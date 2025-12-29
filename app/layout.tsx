@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import { IntroAnimation } from "@/components/animation/IntroAnimation";
+import { SmoothScroll } from "@/components/animation/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "NOUS INFOTECH | Premium Creative Agency",
@@ -21,9 +22,11 @@ export default function RootLayout({
       <body className={`antialiased bg-background text-foreground transition-colors duration-300`}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
           <IntroAnimation>
+          <SmoothScroll>
             <Navbar />
             <main>{children}</main>
             <Footer />
+          </SmoothScroll>
           </IntroAnimation>
         </ThemeProvider>
       </body>

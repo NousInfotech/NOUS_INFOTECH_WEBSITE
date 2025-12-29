@@ -36,11 +36,11 @@ const CTA: React.FC<CTAProps> = ({
       >
         <BackgroundBlur className="bottom-0 right-1/4" opacity={0.4} />
         <ScrollReveal>
-          <h2 className="text-4xl md:text-7xl font-medium leading-tight tracking-tight text-foreground mb-4">
+          <h2 className="text-2xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight text-foreground mb-4">
             {title}
           </h2>
 
-          <p className="text-lg md:text-2xl text-foreground/60 max-w-2xl mx-auto mb-10 font-light">
+          <p className="text-sm md:text-2xl lg:text-4xl text-foreground/60 max-w-2xl mx-auto mb-10 font-light">
             {subtitle}
           </p>
 
