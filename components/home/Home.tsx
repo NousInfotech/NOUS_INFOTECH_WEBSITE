@@ -5,6 +5,8 @@ import HomeAbout from './HomeAbout'
 import HomeExpertise from './HomeExpertise'
 import HomeProjects from './HomeProjects'
 import CTA from '../common/CTA'
+import HomePricing from './HomePricing'
+import HomeBlog from './HomeBlog'
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
      <HomeAbout/>
      <HomeExpertise/>
      <HomeProjects/>
+     <HomePricing/>
+     <HomeBlog/>
       <CTA 
       title="Let's Build Something Great"
       subtitle="Web • Apps • Brand • Strategy"

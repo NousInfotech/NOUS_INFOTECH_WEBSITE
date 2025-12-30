@@ -9,12 +9,15 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Button } from "../ui/Button";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  // { name: "About", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Expertise", href: "/expertise" },
   { name: "Projects", href: "/projects" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -68,9 +71,12 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -86,7 +92,7 @@ export const Navbar = () => {
               href={link.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "text-lg uppercase tracking-widest font-medium",
+                "text-lg tracking-widest font-medium",
                 pathname === link.href ? "text-primary" : "text-foreground"
               )}
             >
@@ -94,15 +100,11 @@ export const Navbar = () => {
             </Link>
           ))}
           <Link href="/hire" onClick={() => setIsOpen(false)}>
-            <button className="w-full bg-primary text-black py-4 font-bold uppercase tracking-widest">
-              Hire Agency
-            </button>
+            <Button className="w-full">Hire Agency</Button>
           </Link>
-          <div className="flex justify-center pt-4">
-            <ThemeToggle />
-          </div>
         </motion.div>
       )}
     </nav>
   );
 };
+

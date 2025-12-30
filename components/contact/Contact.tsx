@@ -1,66 +1,65 @@
 "use client";
-import React from 'react'
 import { PageWrapper } from '../animation/PageWrapper'
 import { ScrollReveal } from '../animation/ScrollReveal'
-import { Button } from '../ui/Button'
+import ContactForm from '../common/Contact';
 
 const Contact = () => {
   return (
   <PageWrapper>
-       <section className="px-6 max-w-7xl mx-auto py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          <div>
+       <section className="md:px-10 px-5 mx-auto py-10 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div className='flex flex-col gap-12 items-start'>
             <ScrollReveal>
-              <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12">
-                Let&apos;s <br /> <span className="text-primary italic">Talk.</span>
-              </h1>
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 border border-primary/20 bg-primary/5 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Get In Touch</span>
+                </div>
+                
+                <h1 className="text-3xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
+                  Let&apos;s  
+                  <span className="text-primary"> Talk.</span>
+                </h1>
+                
+                <p className="text-lg text-foreground/50 max-w-md leading-relaxed">
+                  Have a vision? We have the expertise to bring it to life. 
+                  Reach out and let&apos;s start building something extraordinary.
+                </p>
+              </div>
             </ScrollReveal>
-            <div className="space-y-12">
-              <div>
-                <h4 className="text-primary uppercase tracking-widest font-bold mb-4">Email Us</h4>
-                <p className="text-3xl font-black uppercase tracking-tighter hover:text-primary transition-colors cursor-pointer">
-                  hello@nous.com
-                </p>
-              </div>
-              <div>
-                <h4 className="text-primary uppercase tracking-widest font-bold mb-4">Location</h4>
-                <p className="text-xl text-foreground/70 uppercase tracking-widest">
-                  123 Creative Street <br />
-                  Innovate City, TX 75001
-                </p>
-              </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-8 border-t border-foreground/50">
+              <ScrollReveal delay={0.2}>
+                <div>
+                  <h4 className="text-sm text-primary font-bold mb-2">Email</h4>
+                  <a 
+                    href="mailto:hello@nous.com" 
+                    className="text-2xl md:text-3xl font-bold hover:text-primary duration-300 transition-all"
+                  >
+                    hello@nous.com
+                  </a>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <div>
+                  <h4 className="text-sm text-primary font-bold mb-2">Location</h4>
+                  <p className="text-lg text-foreground/60">
+                    123 Creative Street 
+                    Innovate City, TX 75001
+                  </p>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
 
-          <div className="bg-foreground/5 p-12 border border-foreground/10">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest font-bold text-foreground/40">Full Name</label>
-                <input 
-                  type="text" 
-                  className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors placeholder:text-foreground/10"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest font-bold text-foreground/40">Email Address</label>
-                <input 
-                  type="email" 
-                  className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors placeholder:text-foreground/10"
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest font-bold text-foreground/40">Message</label>
-                <textarea 
-                  rows={4}
-                  className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors placeholder:text-foreground/10"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-              <Button className="w-full">Send Message</Button>
-            </form>
-          </div>
+          <ScrollReveal delay={0.6}>
+            <div className="relative">
+              {/* Decorative background element for the form */}
+              <div className="absolute -inset-4 bg-primary/5 blur-3xl rounded-full -z-10 opacity-50" />
+              <ContactForm submitText="Send Message"/>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </PageWrapper>

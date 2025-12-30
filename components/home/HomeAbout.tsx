@@ -4,12 +4,11 @@ import { ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
 import { Button } from '../ui/Button';
 import Link from 'next/link';
 import BackgroundBlur from '../animation/BackgroundBlur';
+import { Badge } from '../ui/Badge';
 
 const HomeAbout = () => {
   const [isVisible, setIsVisible] = useState(false);
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
-  // const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,16 +27,6 @@ const HomeAbout = () => {
     return () => observer.disconnect();
   }, []);
 
-  // const handleMouseMove = (e: React.MouseEvent) => {
-  //   if (titleRef.current) {
-  //     const rect = titleRef.current.getBoundingClientRect();
-  //     setMousePosition({
-  //       x: ((e.clientX - rect.left) / rect.width) * 100,
-  //       y: ((e.clientY - rect.top) / rect.height) * 100
-  //     });
-  //   }
-  // };
-
   const features = [
     { icon: Sparkles, text: 'Innovative Design', delay: 0.3 },
     { icon: Zap, text: 'Fast Delivery', delay: 0.4 },
@@ -55,9 +44,7 @@ const HomeAbout = () => {
         <div className="relative mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                  <div className='flex flex-col items-start'>
-               <div className="inline-block mb-6 px-4 py-2 bg-foreground/5 rounded-full border border-foreground/10 backdrop-blur-sm">
-                <span className="text-sm font-semibold tracking-wider opacity-80 text-primary">WHO WE ARE</span>
-                </div>
+                  <Badge>Who We Are</Badge>
                   <span className='text-2xl md:text-5xl lg:text-6xl font-medium'>
                     We create <span className="text-primary">unique digital experiences.</span>
                   </span>

@@ -4,20 +4,22 @@ import { motion } from "framer-motion";
 import { PageWrapper } from "@/components/animation/PageWrapper";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 
+import AboutTimeline from "./AboutTimeline";
+
 const About = () => {
   return (
     <PageWrapper>
-      <section className="px-6 max-w-7xl mx-auto py-20">
+      <section className="md:px-10 px-5 mx-auto py-10 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8"
+              className="text-3xl md:text-6xl lg:text-8xl font-medium tracking-tighter leading-30 mb-4"
             >
-              The <span className="text-primary italic">Story</span> <br /> Behind Nous.
+              The Story <span className="text-primary">Behind Nous.</span> 
             </motion.h1>
-            <div className="space-y-6 text-foreground/70 text-lg">
+            <div className="space-y-6 text-foreground/70 md:text-lg">
               <ScrollReveal delay={0.1}>
                 <p>
                   NOUS INFOTECH was born out of a desire to bridge the gap between technical excellence and creative expression. We don&apos;t just build websites; we build digital identities.
@@ -52,7 +54,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* <div className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12">
           {['Innovation', 'Precision', 'Elegance'].map((value, i) => (
             <ScrollReveal key={value} delay={i * 0.1}>
               <div className="p-10 bg-foreground text-background h-full">
@@ -64,8 +66,10 @@ const About = () => {
               </div>
             </ScrollReveal>
           ))}
-        </div>
+        </div> */}
       </section>
+
+      <AboutTimeline />
     </PageWrapper>
   );
 }

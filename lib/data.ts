@@ -1,4 +1,16 @@
-import { BarChart, Code, Globe, Megaphone, Palette, Smartphone, Zap } from "lucide-react";
+import {
+  Code,
+  LayoutDashboard,
+  ShoppingCart,
+  Smartphone,
+  Server,
+  CreditCard,
+  Bot,
+  Rocket,
+  Palette,
+  LifeBuoy,
+} from "lucide-react";
+
 
 // Projects Data
 export const projects = [
@@ -102,6 +114,7 @@ export const projects = [
 },
 
 ];
+
 // Expertise Data
 export const expertiseData = [
   {
@@ -109,36 +122,124 @@ export const expertiseData = [
     description: "Building high-performance, scalable digital products using cutting-edge technologies.",
     icon: Code,
     color: "from-blue-500/20 to-primary/20",
+    points: [
+      "Fast, responsive & device-friendly builds",
+      "Scalable architecture for future growth",
+      "Modern tech stack & best coding practices",
+      "Customized to your brand & goals",
+    ],
+  },
+  {
+    title: "Custom Web Applications & Dashboards",
+    description: "Tailor-made applications and dashboards designed to automate workflows and visualize business data.",
+    icon: LayoutDashboard,
+    color: "from-purple-500/20 to-pink-500/20",
+    points: [
+      "Custom workflows & automation",
+      "Real-time data visualization",
+      "Secure authentication & access control",
+      "Built to align with internal operations",
+    ],
+  },
+  {
+    title: "E-commerce & Marketplace Solutions",
+    description: "End-to-end marketplace platforms with secure transactions, logistics, and custom product logic.",
+    icon: ShoppingCart,
+    color: "from-amber-500/20 to-orange-500/20",
+    points: [
+      "Payment integration (UPI, Stripe, Razorpay, PayPal, etc.)",
+      "Shipping integration with live tracking",
+      "Inventory management & stock control",
+      "Analytics for sales & performance",
+      "Custom logic for unique/special products",
+    ],
+  },
+  {
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile apps built for performance, reliability, and user engagement.",
+    icon: Smartphone,
+    color: "from-green-500/20 to-emerald-500/20",
+    points: [
+      "iOS & Android app development",
+      "Native & cross-platform builds",
+      "Smooth UI/UX experiences",
+      "API connectivity & cloud sync",
+    ],
+  },
+  {
+    title: "Backend & API Development",
+    description: "Secure, scalable server architecture and APIs engineered for seamless integration and data flow.",
+    icon: Server,
+    color: "from-gray-500/20 to-blue-500/20",
+    points: [
+      "REST & GraphQL APIs",
+      "Authentication & authorization systems",
+      "High-performance data handling",
+      "Optimized cloud-based server setups",
+    ],
+  },
+  {
+    title: "Payment & Financial Integrations",
+    description: "Payment gateways, subscription billing, invoicing, and financial systems your users can trust.",
+    icon: CreditCard,
+    color: "from-indigo-500/20 to-primary/20",
+    points: [
+      "Payment gateway setup (Stripe, Razorpay, PayPal, etc.)",
+      "Subscription billing & recurring payments",
+      "Automated invoicing & receipts",
+      "Fraud protection & compliance setup",
+    ],
+  },
+  {
+    title: "AI & Automation Solutions",
+    description: "Smart automation, chatbots, machine learning, and AI integrations to accelerate productivity.",
+    icon: Bot,
+    color: "from-teal-500/20 to-cyan-500/20",
+    points: [
+      "Conversational chatbots",
+      "Process automation & workflow bots",
+      "Predictive analytics & ML models",
+      "AI-powered customer & business ops",
+    ],
+  },
+  {
+    title: "SEO & Performance Optimization",
+    description: "Boost visibility, speed, rankings, and conversions with technical SEO and performance upgrades.",
+    icon: Rocket,
+    color: "from-yellow-500/20 to-lime-500/20",
+    points: [
+      "Technical SEO & site structure",
+      "Web vitals & speed optimization",
+      "Improved ranking & discoverability",
+      "Conversion-focused UX improvements",
+    ],
   },
   {
     title: "UI/UX Design",
-    description: "Creating intuitive and visually stunning user interfaces that enhance user engagement.",
+    description: "User-centered design that blends aesthetics with seamless, intuitive digital experiences.",
     icon: Palette,
-    color: "from-purple-500/20 to-primary/20",
+    color: "from-pink-500/20 to-rose-500/20",
+    points: [
+      "Wireframes & prototypes",
+      "Visual identity & branding",
+      "User journey & navigation flow",
+      "Design systems & consistency",
+    ],
   },
   {
-    title: "Brand Identity",
-    description: "Crafting unique brand stories and visual identities that resonate with your audience.",
-    icon: Globe,
-    color: "from-emerald-500/20 to-primary/20",
+    title: "Maintenance & Support",
+    description: "Reliable, ongoing maintenance, updates, bug fixes, and security monitoring for peace of mind.",
+    icon: LifeBuoy,
+    color: "from-slate-500/20 to-slate-700/20",
+    points: [
+      "Security patches & monitoring",
+      "Bug fixes & error resolution",
+      "Feature updates & enhancements",
+      "Backups, recovery & uptime care",
+    ],
   },
-  {
-    title: "Digital Marketing",
-    description: "Strategic marketing campaigns designed to grow your digital presence and ROI.",
-    icon: Megaphone,
-    color: "from-orange-500/20 to-primary/20",
-  },
-  
 ];
-// Services Data
-export const services = [
-  { title: "Web Development", desc: "Performance-first web applications built with the latest technologies.", icon: Globe },
-  { title: "UI/UX Design", desc: "Intuitive and beautiful user interfaces that maximize engagement.", icon: Palette },
-  { title: "Brand Strategy", desc: "Defining your digital identity and positioning for market success.", icon: Zap },
-  { title: "Mobile Apps", desc: "High-quality native and cross-platform mobile experiences.", icon: Smartphone },
-  { title: "SEO Optimization", desc: "Technical SEO to ensure your brand reaches the right audience.", icon: BarChart },
-  { title: "FullStack Systems", desc: "Complex backend architectures integrated with seamless frontends.", icon: Code },
-];
+
 // Packages Data
 export const packages = [
   {

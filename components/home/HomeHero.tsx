@@ -1,9 +1,17 @@
 "use client"
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { Button } from '../ui/Button';
+import { useTheme } from 'next-themes';
+
 const HomeHero = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    Promise.resolve().then(() => setMounted(true));
+   }, []);
 
   const video1 = useRef<HTMLVideoElement>(null);
   const video2 = useRef<HTMLVideoElement>(null);
@@ -54,12 +62,12 @@ useEffect(() => {
             autoPlay 
             muted 
             playsInline 
-            className="w-full h-full object-cover opacity-40 dark:opacity-30"
+            className="w-full h-full object-cover opacity-40 dark:opacity-20"
           >
             <source src="/video/Home-video.mp4" type="video/mp4" />
           </video>
-          {/* Gradients Overlay for Depth */}
-          <div className="absolute inset-0 bg-linear-to-b from-background" />
+          {/* Gradients Overlay for Depth - Only visible in light mode */}
+          <div className={`absolute inset-0 ${mounted && theme === 'light' ? 'bg-linear-to-b from-background' : ''}`} />
           <div className="absolute inset-0 bg-radial-gradient(circle at 50% 50%, transparent, var(--background))" />
         </div>
 
