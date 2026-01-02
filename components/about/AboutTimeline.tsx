@@ -20,8 +20,8 @@ const AboutTimeline = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative max-w-7xl mx-auto py-10 md:py-20 px-5 overflow-hidden">
-      <div className="text-center mb-10 md:mb-24">
+    <section ref={containerRef} className="relative max-w-7xl mx-auto px-5 overflow-hidden">
+      <div className="text-center mb-5">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,15 +36,16 @@ const AboutTimeline = () => {
         {/* Top Wordmark */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 0.2, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="absolute left-1/2 transform -translate-x-1/2 -top-1 z-20"
+          className="absolute left-1/2 transform -translate-x-1/2 top-10 z-20"
         >
           <Image 
             src="/logo/wordmark.png" 
             alt="Nous Wordmark Top" 
             width={120} 
             height={40} 
+            className="w-[70px]"
           />
         </motion.div>
 
@@ -119,22 +120,6 @@ const AboutTimeline = () => {
             );
           })}
         </div>
-
-        {/* Bottom Wordmark */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 0.2, y: 0 }}
-          viewport={{ once: true }}
-          className="absolute left-1/2 transform -translate-x-1/2 -bottom-10 z-20"
-        >
-          <Image 
-            src="/logo/wordmark.png" 
-            alt="Nous Wordmark Bottom" 
-            width={120} 
-            height={40} 
-            className="dark:invert grayscale"
-          />
-        </motion.div>
       </div>
     </section>
   );
