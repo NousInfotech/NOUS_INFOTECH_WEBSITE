@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Calendar, Clock, ArrowLeft, Share2, Check } from "lucide-react";
-import { blogData } from "@/lib/data";
+import { blogData } from "@/lib/blog-data"
 import formatName from "@/lib/formatName";
 import NotFound from "@/components/common/NotFound";
 

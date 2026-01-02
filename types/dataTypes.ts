@@ -54,4 +54,14 @@ export interface TimelineData {
   image?: string;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  image?: string;
+  rating: number;
+}
+
 

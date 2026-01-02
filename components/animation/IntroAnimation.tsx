@@ -72,7 +72,7 @@ export const IntroAnimation = ({ children }: { children: React.ReactNode }) => {
               variants={textContainer}
               initial="initial"
               animate="animate"
-              className="flex flex-col md:flex-row items-center gap-4 md:gap-8 relative"
+              className="flex flex-row items-center gap-2 md:gap-8 relative"
             >
               {words.map((word, idx) => (
                 <div key={idx} className="flex overflow-hidden">
@@ -80,7 +80,7 @@ export const IntroAnimation = ({ children }: { children: React.ReactNode }) => {
                     <motion.span
                       key={letterIdx}
                       variants={letterVariants}
-                      className={`text-6xl md:text-9xl font-medium tracking-tighter ${
+                      className={`text-4xl md:text-9xl font-medium tracking-tighter ${
                         idx === 0 ? "text-foreground" : "text-primary"
                       }`}
                     >

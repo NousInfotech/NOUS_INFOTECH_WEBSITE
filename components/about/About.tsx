@@ -8,6 +8,7 @@ import AboutBanner from "./AboutBanner";
 import { teamMembers } from "@/lib/data";
 import AboutTeamCard from "./AboutTeamCard";
 import CTA from "../common/CTA";
+import Testimonials from "../common/Testimonials";
 const About = () => {
   return (
     <PageWrapper>
@@ -54,6 +55,7 @@ const About = () => {
             </div>
           </div> 
         </div> 
+        <Testimonials />
         <AboutTimeline />
       </section>
     <CTA/>

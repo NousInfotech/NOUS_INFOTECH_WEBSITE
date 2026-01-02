@@ -4,7 +4,7 @@ import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { blogData } from "@/lib/data";
+import { blogData } from "@/lib/blog-data";
 import formatName from "@/lib/formatName";
 import CTA from "../common/CTA";
 import { PageWrapper } from "../animation/PageWrapper";

@@ -7,6 +7,7 @@ import HomeProjects from './HomeProjects'
 import CTA from '../common/CTA'
 import HomePricing from './HomePricing'
 import HomeBlog from './HomeBlog'
+import Testimonials from '../common/Testimonials'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
      <HomeExpertise/>
      <HomeProjects/>
      <HomePricing/>
+     <Testimonials />
      <HomeBlog/>
      <CTA />
     </PageWrapper>
