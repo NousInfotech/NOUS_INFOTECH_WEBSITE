@@ -34,8 +34,8 @@ const HomeExpertise = () => {
 
         <div className="md:hidden mt-10">
           <ScrollReveal delay={0.4}>
-            <Link href="/expertise" className="flex items-center justify-center">
-              <Button variant="outline">
+            <Link href="/expertise" className="flex items-center justify-center mx-5">
+              <Button variant="outline" className="w-full">
                 View All Expertise
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>

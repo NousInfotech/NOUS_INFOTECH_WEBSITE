@@ -105,5 +105,38 @@ body {
   .border-beam-content {
     @apply bg-background rounded-[calc(1rem-var(--border-width))] w-full h-full relative z-10;
   }
+
+  .border-beam-full {
+    --border-width: 2px;
+    --border-color: var(--primary);
+    --border-bg: var(--background);
+    
+    position: relative;
+    border-radius: 9999px;
+    padding: var(--border-width);
+    overflow: hidden;
+  }
+
+  .border-beam-full::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--border-width);
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 70%,
+      var(--border-color) 85%,
+      transparent 100%
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: border-beam 4s linear infinite;
+    pointer-events: none;
+  }
+
+  .border-beam-full-content {
+    @apply bg-background rounded-full w-full h-full relative z-10 flex items-center justify-center;
+  }
 }
 

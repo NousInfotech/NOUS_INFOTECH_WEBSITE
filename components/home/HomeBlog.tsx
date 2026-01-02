@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import {  ArrowRight } from "lucide-react";
- 
 import { Badge } from "../ui/Badge";
 import { ScrollReveal } from "../animation/ScrollReveal";
 import { Button } from "../ui/Button";

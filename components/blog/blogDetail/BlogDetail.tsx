@@ -6,8 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Calendar, Clock, ArrowLeft, Share2, Check } from "lucide-react";
-import { blogData } from "@/lib/blog-data";
+import { blogData } from "@/lib/data";
 import formatName from "@/lib/formatName";
+import NotFound from "@/components/common/NotFound";
 
 const BlogDetail = () => {
 const params = useParams()
@@ -41,14 +42,7 @@ const handleShare = async () => {
 
   if (!blog) {
     return (
-      <div className="flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <Link href="/blog" className="text-primary hover:underline">
-            Back to Blog
-          </Link>
-        </div>
-      </div>
+       <NotFound/>
     );
   }
 
@@ -178,12 +172,18 @@ const handleShare = async () => {
                ))}
              </div>
            </div>
-           
-           <Link href="/blog">
+           <div className="flex items-center gap-2">
+             <Link href="/blog">
              <button className="px-8 py-3 rounded-full border border-foreground/10 hover:border-primary hover:text-primary transition-all duration-300 font-medium text-sm">
                Read more articles
              </button>
            </Link>
+           <Link href="/contact" className="border-beam">
+             <button className="border-beam-full-content px-8 py-3 hover:text-primary transition-all duration-300 font-medium text-sm">
+               Contact Us
+             </button>
+           </Link>
+           </div>
         </div>
       </div>
     </div>

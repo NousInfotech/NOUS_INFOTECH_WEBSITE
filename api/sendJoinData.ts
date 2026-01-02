@@ -1,20 +1,17 @@
-// lib/sendFormData.ts
+// lib/sendJoinData.ts
 
-export interface FormPayload {
+interface JoinPayload {
     name: string;
     email: string;
     message: string;
     phoneNo: string;
-    plan?: string;
-    category?: string;
-    budget?: string;
     role?: string;
     type?: string;
 }
  
-const API_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_API_URL || "";
+const API_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_JOIN_API_URL || "";
 
-export async function sendFormData(payload: FormPayload): Promise<void> {
+export async function sendJoinData(payload: JoinPayload): Promise<void> {
     try {
         const response = await fetch(API_URL, {
             method: "POST",
@@ -27,10 +24,9 @@ export async function sendFormData(payload: FormPayload): Promise<void> {
 
         const data = await response.text();
 
-        console.log(data);
-
-        console.log("✅ Form data sent:", payload);
+        console.log("Response data:", data);
+        console.log("✅ Join application data sent:", payload);
     } catch (error) {
-        console.error("❌ Failed to send form data:", error);
+        console.error("❌ Failed to send join application data:", error);
     }
 }

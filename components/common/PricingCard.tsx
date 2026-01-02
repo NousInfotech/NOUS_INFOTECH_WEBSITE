@@ -4,6 +4,7 @@ import { packages } from '@/lib/data'
 import { ScrollReveal } from '../animation/ScrollReveal'
 import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '../ui/Button'
+import Link from 'next/link'
 
 const PricingCard = () => {
   return (
@@ -13,7 +14,7 @@ const PricingCard = () => {
           <div
             className={`group relative h-full p-8 md:p-10 border rounded-3xl transition-all duration-500 overflow-hidden ${
               pkg.popular
-                ? "bg-foreground text-background border-primary scale-105 z-10 shadow-2xl shadow-primary/20"
+                ? "bg-foreground text-background"
                 : "bg-foreground/5 text-foreground border-foreground/10 hover:bg-foreground/10"
             }`}
           >
@@ -55,15 +56,17 @@ const PricingCard = () => {
               ))}
             </div>
 
-            <Button
-              variant={pkg.popular ? "primary" : "outline"}
-              className={`w-full group/btn ${
-                pkg.popular ? "bg-primary text-white hover:bg-white hover:border hover:border-primary hover:text-primary" : ""
-              }`}
-            >
-              {pkg.buttonText}
-              <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-            </Button>
+            <Link href={`/contact?plan=${encodeURIComponent(pkg.name)}`} className="block w-full">
+              <Button
+                variant={pkg.popular ? "primary" : "outline"}
+                className={`w-full group/btn ${
+                  pkg.popular ? "bg-primary text-white hover:bg-white hover:border hover:border-primary hover:text-primary" : ""
+                }`}
+              >
+                {pkg.buttonText}
+                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </ScrollReveal>
       ))}

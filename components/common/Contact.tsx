@@ -2,11 +2,21 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/Button";
-import { ArrowRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import { sendFormData } from "@/api/sendFormData";
+import { ArrowRight, CheckCircle2, AlertCircle, Loader2, Edit } from "lucide-react";
+import { sendFormData, FormPayload } from "@/api/sendFormData";
 import { motion, AnimatePresence } from "framer-motion";
+import { useFormContext } from "@/context/FormContext";
+import Link from "next/link";
 
-const ContactForm = ({ submitText }: { submitText: string }) => {
+const ContactForm = ({ 
+  submitText, 
+  onSubmitFn = sendFormData
+}: { 
+  submitText: string,
+  onSubmitFn?: (payload: FormPayload) => Promise<void>
+}) => {
+  const { state } = useFormContext();
+  
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,6 +30,16 @@ const ContactForm = ({ submitText }: { submitText: string }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Combine local form state with context state
+    const fullPayload = {
+      ...form,
+      plan: state.plan,
+      category: state.category,
+      budget: state.budget,
+      role: state.role,
+      type: state.type,
+    };
+
     // Basic validation
     if (!form.name || !form.email) {
       setStatus("error");
@@ -38,10 +58,20 @@ const ContactForm = ({ submitText }: { submitText: string }) => {
     setStatus("loading");
     setErrorMessage("");
 
+    console.log("Sending data:", fullPayload);
+    console.log("Total fields sent:", Object.keys(fullPayload).length);
+
     try {
-      await sendFormData(form);
+      await onSubmitFn(fullPayload);
       setStatus("success");
-      setForm({ name: "", email: "", phoneNo: "", message: "" });
+      setForm({ 
+        name: "", 
+        email: "", 
+        phoneNo: "", 
+        message: "", 
+      });
+      // Context state is usually kept or reset depending on UX preference.
+      // We'll keep it for now as it reflects the UI selections.
       
       // Reset success status after 5 seconds to allow for new submissions
       setTimeout(() => setStatus("idle"), 5000);
@@ -114,6 +144,7 @@ const ContactForm = ({ submitText }: { submitText: string }) => {
             <textarea
               rows={4}
               value={form.message}
+              required
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors font-medium resize-none"
               placeholder="Tell us about your project goals, timeline, and requirements..."
@@ -146,6 +177,57 @@ const ContactForm = ({ submitText }: { submitText: string }) => {
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {state.plan && (
+              <div className="flex items-center justify-between gap-3 p-4 bg-primary/5 border border-primary/10 rounded-lg">
+                <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <p className="text-sm font-medium"> 
+                  Selected Plan: <span className="text-primary uppercase font-bold">{state.plan}</span>
+                </p>
+                </div>
+                <Link href="/pricing">
+                  <Edit/>
+                  </Link>
+              </div>
+            )}
+
+            {(state.category || state.budget || state.role || state.type) && (
+              <div className="space-y-3 p-4 bg-primary/5 border border-primary/10 rounded-lg">
+                {state.category && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <p className="text-sm font-medium"> 
+                      Category: <span className="text-primary uppercase font-bold">{state.category}</span>
+                    </p>
+                  </div>
+                )}
+                {state.budget && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <p className="text-sm font-medium"> 
+                      Budget: <span className="text-primary uppercase font-bold">{state.budget}</span>
+                    </p>
+                  </div>
+                )}
+                {state.role && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <p className="text-sm font-medium"> 
+                      Role: <span className="text-primary uppercase font-bold">{state.role}</span>
+                    </p>
+                  </div>
+                )}
+                {state.type && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <p className="text-sm font-medium"> 
+                      Type: <span className="text-primary uppercase font-bold">{state.type}</span>
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="pt-6">
               <Button 

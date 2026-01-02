@@ -10,16 +10,8 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "../ui/Button";
+import { navLinks } from "@/lib/data";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Expertise", href: "/expertise" },
-  { name: "Projects", href: "/projects" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -32,8 +24,8 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-9999 bg-background/80 backdrop-blur-xs border-b border-foreground/10">
-      <div className="mx-auto px-6 h-[80px] flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-9999 bg-background/20 backdrop-blur-sm border-b border-foreground/10">
+      <div className="mx-auto px-6 h-[85px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-1 group">
           <div className="w-[150px] relative transition-all duration-500 group-hover:scale-105">
             <Image 
@@ -62,9 +54,9 @@ export const Navbar = () => {
               )}
             </Link>
           ))}
-          <Link href="/hire">
+          <Link href="/hire-us">
             <button className="cursor-pointer bg-primary text-white px-6 py-2 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity rounded-2xl">
-              Hire Agency
+              Hire Us
             </button>
           </Link>
           <ThemeToggle />
@@ -99,8 +91,8 @@ export const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link href="/hire" onClick={() => setIsOpen(false)}>
-            <Button className="w-full">Hire Agency</Button>
+          <Link href="/hire-us" onClick={() => setIsOpen(false)}>
+            <Button className="w-full">Hire Us</Button>
           </Link>
         </motion.div>
       )}

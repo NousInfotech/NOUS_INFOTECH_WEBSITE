@@ -3,23 +3,44 @@
 import { motion } from "framer-motion";
 import { PageWrapper } from "@/components/animation/PageWrapper";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
-
 import AboutTimeline from "./AboutTimeline";
-
+import AboutBanner from "./AboutBanner";
+import { teamMembers } from "@/lib/data";
+import AboutTeamCard from "./AboutTeamCard";
+import CTA from "../common/CTA";
 const About = () => {
   return (
     <PageWrapper>
-      <section className="md:px-10 px-5 mx-auto py-10 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div>
+      <section className="md:px-10 px-5 mx-auto py-10 space-y-20">
+       <AboutBanner />
+
+         {/* Team Section */}
+        <div className="space-y-4">
+          <ScrollReveal>
+            <div>
+              <h2 className="text-2xl md:text-4xl lg:text-6xl font-medium">
+                The Minds <span className="text-primary">Behind the Code.</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member, index) => (
+              <AboutTeamCard key={member.name} member={member} index={index} />
+            ))}
+          </div>
+        </div>
+
+        <div className="border-beam">
+          <div className="flex lg:flex-row flex-col items-center justify-center border-beam-content md:p-10 p-5 relative overflow-hidden gap-6">
             <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-3xl md:text-6xl lg:text-8xl font-medium tracking-tighter leading-30 mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="text-2xl md:text-5xl lg:text-7xl font-medium tracking-tighter leading-none duration-500"
             >
               The Story <span className="text-primary">Behind Nous.</span> 
             </motion.h1>
-            <div className="space-y-6 text-foreground/70 md:text-lg">
+            <div className="space-y-3 text-foreground/70 text-sm md:text-lg max-w-xl font-light">
               <ScrollReveal delay={0.1}>
                 <p>
                   NOUS INFOTECH was born out of a desire to bridge the gap between technical excellence and creative expression. We don&apos;t just build websites; we build digital identities.
@@ -31,45 +52,12 @@ const About = () => {
                 </p>
               </ScrollReveal>
             </div>
-          </div>
-          
-          <div className="relative aspect-square bg-foreground/5 border border-foreground/10 flex items-center justify-center overflow-hidden">
-             <motion.div 
-               animate={{ 
-                 scale: [1, 1.1, 1],
-                 rotate: [0, 5, -5, 0]
-               }}
-               transition={{ duration: 10, repeat: Infinity }}
-               className="w-2/3 h-2/3 border-2 border-primary"
-             />
-             <motion.div 
-               animate={{ 
-                 scale: [1.2, 1, 1.2],
-                 rotate: [0, -10, 10, 0]
-               }}
-                transition={{ duration: 15, repeat: Infinity }}
-                className="absolute w-1/2 h-1/2 border-2 border-foreground/20"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-background to-transparent opacity-50" />
-          </div>
-        </div>
-
-        {/* <div className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {['Innovation', 'Precision', 'Elegance'].map((value, i) => (
-            <ScrollReveal key={value} delay={i * 0.1}>
-              <div className="p-10 bg-foreground text-background h-full">
-                <span className="text-primary font-bold text-4xl mb-4 block">0{i+1}</span>
-                <h3 className="text-2xl font-black uppercase mb-4">{value}</h3>
-                <p className="text-background/60">
-                  Driving the industry forward with cutting-edge solutions and a commitment to excellence.
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div> */}
+          </div> 
+        </div> 
+        <AboutTimeline />
       </section>
+    <CTA/>
 
-      <AboutTimeline />
     </PageWrapper>
   );
 }

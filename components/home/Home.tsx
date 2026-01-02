@@ -17,12 +17,7 @@ const Home = () => {
      <HomeProjects/>
      <HomePricing/>
      <HomeBlog/>
-      <CTA 
-      title="Let's Build Something Great"
-      subtitle="Web • Apps • Brand • Strategy"
-      buttonText="Work With Us"
-      buttonLink="/hire"
-      />
+     <CTA />
     </PageWrapper>
   )
 }

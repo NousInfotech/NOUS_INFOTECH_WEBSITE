@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
-import { blogData } from '@/lib/blog-data'
+import { blogData } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
