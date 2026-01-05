@@ -2,16 +2,18 @@ import { ScrollReveal } from '../animation/ScrollReveal';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { TeamMember } from '@/types/dataTypes';
-import { Linkedin, Twitter, Github, Instagram } from 'lucide-react'; 
+import { Linkedin, Github, Instagram } from 'lucide-react'; 
+import { BsTwitterX } from 'react-icons/bs';
+import { teamMembers } from '@/lib/data';
 
 const socialIcons = {
   linkedin: Linkedin,
-  twitter: Twitter,
+  twitter: BsTwitterX,
   github: Github,
   instagram: Instagram,
 };
 
-const AboutTeamCard = ({ member, index }: { member: TeamMember, index: number }) => {
+const AboutTeam = ({ member, index }: { member: TeamMember, index: number }) => {
   return (
     <ScrollReveal delay={index * 0.1}>
       <motion.div 
@@ -27,7 +29,7 @@ const AboutTeamCard = ({ member, index }: { member: TeamMember, index: number })
                 src={member.image} 
                 alt={member.name}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
+                className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1"
               />
               
               {/* Bottom Gradient Overlay */}
@@ -96,7 +98,7 @@ const AboutTeamCard = ({ member, index }: { member: TeamMember, index: number })
         </div>
         <div className="space-y-1 relative z-10">
           <motion.h3 
-            className="text-xl font-bold uppercase tracking-tighter transition-colors duration-300 group-hover:text-primary"
+            className="text-xl font-medium tracking-tighter transition-colors duration-300 group-hover:text-primary"
           >
             {member.name}
           </motion.h3>
@@ -114,4 +116,23 @@ const AboutTeamCard = ({ member, index }: { member: TeamMember, index: number })
     </ScrollReveal>
   );
 };
-export default AboutTeamCard
+
+export default function AboutTeamCard() {
+  return (
+      <div className="space-y-4">
+          <ScrollReveal>
+            <div>
+              <h2 className="text-xl md:text-4xl lg:text-6xl font-medium">
+                The Minds <span className="text-primary">Behind the Code.</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {teamMembers.map((member, index) => (
+              <AboutTeam key={member.name} member={member} index={index} />
+            ))}
+          </div>
+        </div>
+  )
+}

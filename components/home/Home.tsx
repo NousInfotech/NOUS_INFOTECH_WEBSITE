@@ -17,7 +17,7 @@ const Home = () => {
      <HomeExpertise/>
      <HomeProjects/>
      <HomePricing/>
-     <Testimonials />
+     <Testimonials className="px-5 md:px-10" />
      <HomeBlog/>
      <CTA />
     </PageWrapper>

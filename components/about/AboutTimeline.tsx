@@ -20,8 +20,8 @@ const AboutTimeline = () => {
   });
 
   return (
-    <section ref={containerRef} className="relative max-w-7xl mx-auto px-5 overflow-hidden">
-      <div className="text-center mb-5">
+    <section ref={containerRef} className="relative mx-auto overflow-hidden">
+      <div className="text-center">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,14 +38,14 @@ const AboutTimeline = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="absolute left-1/2 transform -translate-x-1/2 top-10 z-20"
+          className="absolute left-1/2 transform -translate-x-1/2 top-11 z-20"
         >
           <Image 
             src="/logo/wordmark.png" 
             alt="Nous Wordmark Top" 
             width={120} 
             height={40} 
-            className="w-[70px]"
+            className="w-[60px]"
           />
         </motion.div>
 
@@ -109,11 +109,36 @@ const AboutTimeline = () => {
                   <motion.div
                     initial={{ scale: 0.6, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: false, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-50px 0px -50px 0px" }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    className="w-4 h-4 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full bg-background border-2 md:border-4 border-primary flex items-center justify-center shadow-lg"
+                    className="relative w-4 h-4 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-full bg-background border-2 md:border-4 border-primary flex items-center justify-center shadow-lg"
                   >
-                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary" />
+                    {/* Pulsing Ripple Effect */}
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [0.5, 0, 0.5],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inset-0 rounded-full bg-primary/30"
+                    />
+                    
+                    {/* Inner Core */}
+                    <motion.div 
+                      animate={{
+                        scale: [1, 1.2, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary relative z-10 shadow-[0_0_10px_rgba(var(--primary),0.5)]" 
+                    />
                   </motion.div>
                 </div>
               </div>

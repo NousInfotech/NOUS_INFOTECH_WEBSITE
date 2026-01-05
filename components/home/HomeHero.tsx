@@ -86,7 +86,7 @@ useEffect(() => {
               We&apos;re a creative digital agency dedicated to crafting high-end digital experiences that define industries.
             </p>
             <div className="flex md:flex-row flex-col gap-4">
-              <Link href="/hire">
+              <Link href="/hire-us">
                 <Button className='text-white w-full'>Hire Our Agency</Button>
               </Link>
               <Link href="/projects">

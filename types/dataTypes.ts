@@ -40,12 +40,11 @@ export interface Blog {
   title: string;
   userName: string;
   userTech: string;
-  excerpt: string;
   category: string;
   date: string;
   readTime: string;
   image: string;
-  content?: string;
+  content: string[];
 }
 
 export interface TimelineData {
@@ -54,7 +53,7 @@ export interface TimelineData {
   image?: string;
 }
 
-export interface Testimonial {
+export interface TestimonialData {
   id: string;
   name: string;
   role: string;
@@ -62,6 +61,8 @@ export interface Testimonial {
   content: string;
   image?: string;
   rating: number;
+  linkedIn?: string;
+  link?: string;
 }
 
 

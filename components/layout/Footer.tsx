@@ -4,17 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Instagram, Linkedin} from "lucide-react";
 import { navLinks } from "@/lib/data";
 
 const SOCIAL_LINKS = [
   { icon: Instagram, href: "https://www.instagram.com/nousinfotech?igsh=MWVwajVuMHF5b2hlZA==", label: "Instagram" },
-  { icon: Twitter, href: "//www.linkedin.com/company/nous-infotech/about/", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/nous-infotech/posts/?feedView=all", label: "LinkedIn" },
 ];
-
-
 
 export const Footer = () => {
   const { theme } = useTheme();
@@ -25,8 +21,8 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-background border-t border-foreground/10 py-20 px-6 mt-20">
-      <div className="px-5 md:px-20 mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
+    <footer className="bg-background border-t border-foreground/10 px-5 md:px-10 py-20 mt-20">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="md:col-span-2">
           <Link
@@ -118,7 +114,7 @@ export const Footer = () => {
           <ul className="flex flex-col gap-4 text-sm text-foreground/60">
             <li>
               <a 
-                href="mailto:nousinfotechq@gmail.com" 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nousinfotechq@gmail.com.com&su=Business%20Inquiry&body=Hello%20Suhail,%0A%0AI%20would%20like%20to%20connect." 
                 className="hover:text-primary transition-colors"
               >
                 nousinfotechq@gmail.com
@@ -145,7 +141,7 @@ export const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="max-w-7xl mx-auto pt-20 border-t border-foreground/5 flex flex-col md:row justify-between items-center gap-6">
+      <div className="mx-auto pt-20 border-t border-foreground/5 flex flex-col md:row justify-between items-center gap-6">
         <p className="text-foreground/40 text-xs uppercase tracking-widest">
           &copy; {new Date().getFullYear()} NOUS INFOTECH. ALL RIGHTS RESERVED.
         </p>

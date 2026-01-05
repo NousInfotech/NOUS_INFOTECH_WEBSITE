@@ -30,15 +30,15 @@ const Contact = () => {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-8 border-t border-foreground/50">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full pt-8 border-t border-foreground/50 items-center">
               <ScrollReveal delay={0.2}>
                 <div>
                   <h4 className="text-sm text-primary font-bold mb-2">Email</h4>
                   <a 
-                    href="mailto:hello@nous.com" 
+                    href="mailto:nousinfotechq@gmail.com" 
                     className="text-2xl md:text-3xl font-medium hover:text-primary duration-300 transition-all"
                   >
-                    hello@nous.com
+                    nousinfotechq@gmail.com
                   </a>
                 </div>
               </ScrollReveal>
@@ -47,8 +47,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-sm text-primary font-bold mb-2">Location</h4>
                   <p className="text-lg text-foreground/60">
-                    123 Creative Street 
-                    Innovate City, TX 75001
+                    Chennai, Tamil Nadu, India
                   </p>
                 </div>
               </ScrollReveal>

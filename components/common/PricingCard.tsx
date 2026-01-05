@@ -8,11 +8,11 @@ import Link from 'next/link'
 
 const PricingCard = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
       {packages.map((pkg, i) => (
-        <ScrollReveal key={pkg.name} delay={i * 0.1}>
+        <ScrollReveal key={pkg.name} delay={i * 0.1} height="100%">
           <div
-            className={`group relative h-full p-8 md:p-10 border rounded-3xl transition-all duration-500 overflow-hidden ${
+            className={`group relative h-full p-8 md:p-10 border rounded-3xl transition-all duration-500 overflow-hidden flex flex-col ${
               pkg.popular
                 ? "bg-foreground text-background"
                 : "bg-foreground/5 text-foreground border-foreground/10 hover:bg-foreground/10"
@@ -31,19 +31,21 @@ const PricingCard = () => {
                 {pkg.name}
               </h3>
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl md:text-5xl font-bold tracking-tighter">
+                <span className={`${pkg.name === "Custom" ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"} font-bold tracking-tighter`}>
                   {pkg.price}
                 </span>
-                <span className={`text-xs uppercase font-bold tracking-widest ${pkg.popular ? "opacity-60" : "opacity-30"}`}>
-                  / Project
-                </span>
+                {pkg.name !== "Custom" && (
+                  <span className={`text-xs uppercase font-bold tracking-widest ${pkg.popular ? "opacity-60" : "opacity-30"}`}>
+                    / Project
+                  </span>
+                )}
               </div>
               <p className={`mt-4 text-sm leading-relaxed ${pkg.popular ? "opacity-70" : "opacity-50"}`}>
                 {pkg.description}
               </p>
             </div>
 
-            <div className="space-y-4 mb-12">
+            <div className="space-y-4 mb-12 grow">
               {pkg.features.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
                   <div className={`w-5 h-5 rounded-full flex items-center justify-center ${pkg.popular ? "bg-primary text-black" : "bg-primary/20 text-primary"}`}>
@@ -56,9 +58,10 @@ const PricingCard = () => {
               ))}
             </div>
 
-            <Link href={`/contact?plan=${encodeURIComponent(pkg.name)}`} className="block w-full">
+            <Link href={`/contact?plan=${encodeURIComponent(pkg.name)}`} className="block w-full mt-auto">
               <Button
                 variant={pkg.popular ? "primary" : "outline"}
+                size="md"
                 className={`w-full group/btn ${
                   pkg.popular ? "bg-primary text-white hover:bg-white hover:border hover:border-primary hover:text-primary" : ""
                 }`}

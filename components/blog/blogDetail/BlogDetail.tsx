@@ -71,7 +71,7 @@ const handleShare = async () => {
           transition={{ duration: 0.8 }}
           className="mb-5"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
               {blog.category}
             </span>
@@ -154,13 +154,15 @@ const handleShare = async () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="prose prose-invert prose-lg max-w-none mb-5"
+          className="prose prose-invert prose-lg max-w-none mb-10"
         >
-          <div 
-            className="text-foreground/80 leading-relaxed space-y-6"
-            dangerouslySetInnerHTML={{ __html: blog.content || "" }} 
-          />
+          <div className="text-foreground/80 leading-relaxed space-y-6">
+            {blog.content.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </motion.div>
+
 
         {/* Footer Navigation */}
         <div className="pt-5 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -172,7 +174,7 @@ const handleShare = async () => {
                ))}
              </div>
            </div>
-           <div className="flex items-center gap-2">
+           <div className="flex flex-wrap items-center justify-center gap-3">
              <Link href="/blog">
              <button className="px-8 py-3 rounded-full border border-foreground/10 hover:border-primary hover:text-primary transition-all duration-300 font-medium text-sm">
                Read more articles

@@ -66,7 +66,7 @@ export const IntroAnimation = ({ children }: { children: React.ReactNode }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed inset-0 z-100 flex items-center justify-center bg-background"
+            className="fixed inset-0 z-10000 flex items-center justify-center bg-background"
           >
             <motion.div
               variants={textContainer}

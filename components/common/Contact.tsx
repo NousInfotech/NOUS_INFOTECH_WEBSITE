@@ -21,8 +21,22 @@ const ContactForm = ({
     name: "",
     email: "",
     phoneNo: "",
+    countryCode: "+91",
     message: "",
   });
+
+  const COUNTRY_CODES = [
+    { code: "+91", label: "IND" },
+    { code: "+1", label: "USA" },
+    { code: "+44", label: "UK" },
+    { code: "+971", label: "UAE" },
+    { code: "+61", label: "AUS" },
+    { code: "+65", label: "SGP" },
+    { code: "+49", label: "GER" },
+    { code: "+33", label: "FRA" },
+    { code: "+81", label: "JPN" },
+    { code: "+86", label: "CHN" },
+  ];
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -30,9 +44,15 @@ const ContactForm = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Combine country code with phone number if phone number is provided
+    const finalPhoneNo = form.phoneNo ? `${form.countryCode} ${form.phoneNo}` : "";
+
+    const {...formWithoutCountryCode } = form;
+
     // Combine local form state with context state
     const fullPayload = {
-      ...form,
+      ...formWithoutCountryCode,
+      phoneNo: finalPhoneNo,
       plan: state.plan,
       category: state.category,
       budget: state.budget,
@@ -68,6 +88,7 @@ const ContactForm = ({
         name: "", 
         email: "", 
         phoneNo: "", 
+        countryCode: "+91",
         message: "", 
       });
       // Context state is usually kept or reset depending on UX preference.
@@ -128,13 +149,26 @@ const ContactForm = ({
             <label className="text-xs uppercase tracking-widest font-bold text-primary">
               Phone Number (Optional)
             </label>
-            <input
-              type="text"
-              value={form.phoneNo}
-              onChange={(e) => setForm({ ...form, phoneNo: e.target.value })}
-              className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors font-medium"
-              placeholder="+91 98765 43210"
-            />
+            <div className="flex gap-4">
+              <select
+                value={form.countryCode}
+                onChange={(e) => setForm({ ...form, countryCode: e.target.value })}
+                className="bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors font-medium text-sm w-24 appearance-none cursor-pointer"
+              >
+                {COUNTRY_CODES.map((item) => (
+                  <option key={item.code} value={item.code} className="bg-background text-foreground">
+                    {item.label} ({item.code})
+                  </option>
+                ))}
+              </select>
+              <input
+                type="text"
+                value={form.phoneNo}
+                onChange={(e) => setForm({ ...form, phoneNo: e.target.value })}
+                className="flex-1 bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors font-medium"
+                placeholder="98765 43210"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">

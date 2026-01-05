@@ -82,9 +82,11 @@ const Blog = () => {
                         <span className="flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
                         <span className="flex items-center gap-1.5"><Clock size={14} /> {post.readTime}</span>
                       </div>
-                      <p className="text-foreground/60 text-sm md:text-base line-clamp-2 leading-relaxed">
-                        {post.excerpt}
-                      </p>
+                      <div className="text-foreground/60 text-sm md:text-base line-clamp-4 leading-relaxed space-y-2">
+                        {post.content.slice(0, 4).map((p, idx) => (
+                          <p key={idx}>{p}</p>
+                        ))}
+                      </div>
                       <div className="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all duration-300">
                         Read Full Story <ArrowRight size={16} />
                       </div>
@@ -126,9 +128,12 @@ const Blog = () => {
                         <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                         <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                       </div>
-                      <h3 className="text-lg font-medium group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+                      <h3 className="font-medium group-hover:text-primary transition-colors line-clamp-2 leading-snug mb-2">
                         {post.title}
                       </h3>
+                      {/* <div className="text-foreground/60 text-xs line-clamp-2 leading-relaxed mb-3">
+                        {post.content.slice(0, 2).join(' ')}
+                      </div> */}
                       <div className="flex items-center gap-1.5 text-primary font-bold text-xs">
                         Learn More <ArrowRight size={14} />
                       </div>

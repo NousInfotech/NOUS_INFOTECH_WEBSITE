@@ -67,9 +67,11 @@ const BlogGrid = ({count, remove}: {count?: number, remove?: number}) => {
                     {post.title}
                   </h3>
                   
-                  <p className="text-foreground/60 line-clamp-2 mb-6 text-xs md:text-sm flex-1">
-                    {post.excerpt}
-                  </p>
+                  <div className="text-foreground/60 line-clamp-3 mb-6 text-xs md:text-sm flex-1">
+                    {post.content.slice(0, 2).map((p, idx) => (
+                      <p key={idx} className="mb-2 last:mb-0">{p}</p>
+                    ))}
+                  </div>
                   
                   <div className="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-4 transition-all duration-300">
                     Read More <ArrowRight size={16} />

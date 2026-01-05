@@ -1,4 +1,4 @@
-import { Project, Expertise, Package, TeamMember, TimelineData, Testimonial } from "@/types/dataTypes";
+import { Project, Expertise, Package, TeamMember, TimelineData, TestimonialData } from "@/types/dataTypes";
 import {
   Code,
   LayoutDashboard,
@@ -124,6 +124,13 @@ export const projects: Project[] = [
   link: "https://prepcohealthcare.com/",
   year: 2023,
 },
+{
+  title: "Last Bite India",
+  category: "App | Development",
+  image: "/project-images/last-bite-2.jpeg",
+  link: "https://play.google.com/store/apps/details?id=com.nous.lastbite",
+  year: 2024,
+}
 
 ];
 
@@ -298,6 +305,21 @@ export const packages: Package[] = [
     buttonText: "Get Premium",
     popular: false,
   },
+  {
+    name: "Custom",
+    price: "Let's Talk",
+    description: "Tailored solutions for your specific business needs.",
+    features: [
+      "Dedicated Project Manager",
+      "Full Source Code Access",
+      "Custom UI/UX Research",
+      "Scalable Infrastructure Ops",
+      "SLA-backed Support",
+      "White-label Option",
+    ],
+    buttonText: "Contact Us",
+    popular: false,
+  },
 ];
 
 // Team Members Data
@@ -308,28 +330,26 @@ export const teamMembers: TeamMember[] = [
     image: "/team/aliakram-new.png",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/ali-akram-2729ba282/' },
+      { platform: 'twitter', url: 'https://x.com/Akram_010101'},
       { platform: 'instagram', url: 'https://www.instagram.com/akram_ackerman_?igsh=MXJkOHU5aXY2MW91eA==' },
-      { platform: 'twitter', url: 'https://x.com/Akram_010101'}
     ]
    },
     {
     name: "Rasmiya Ayoub",
-    role: "Lead Software Engineer",
-    image: "/project-images/dummy-user.jpg",
+    role: "Co-Founder & Team Lead",
+    image: "/team/rasmiya.png",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/rasmiya-ayoub/' },
-      { platform: 'twitter', url: '#' },
-      { platform: 'instagram', url: '#'}
     ]
   },
     {
     name: "Siddique",
-    role: "Lead Software Engineer",
-    image: "/project-images/dummy-user.jpg",
+    role: "Backend Developer",
+    image: "/team/sidd.png",
     socials: [
-      { platform: 'linkedin', url: '#' },
-      { platform: 'twitter', url: '#' },
-      { platform: 'instagram', url: '#'}
+      { platform: 'linkedin', url: 'https://www.linkedin.com/in/siddiqueofl/' },
+      { platform: 'twitter', url: 'https://x.com/siddiqueofl' },
+      { platform: 'instagram', url: 'https://www.instagram.com/siddique.ofl?igsh=Njh2a2pndGRpb2Rk'}
     ]
   },
   {
@@ -342,45 +362,58 @@ export const teamMembers: TeamMember[] = [
       {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
     ]
    },
+      {
+    name: "Sivajnanam S",
+    role: "Full Stack Developer",
+    image: "/team/siva.jpeg",
+    socials: [
+      {platform: 'linkedin', url: 'https://www.linkedin.com/in/siva-s-6821ba321'},
+      // {platform: 'twitter', url: 'https://x.com/KannanRavi14140'},
+      // {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
+    ]
+   },
 ];
 
 // Testimonials Data
-export const testimonialsData: Testimonial[] = [
+export const testimonialsData: TestimonialData[] = [
   {
     id: "1",
-    name: "John Smith",
+    name: "Lakshmi Nandhakumar",
     role: "CEO",
-    company: "TechFlow Solutions",
-    content: "NOUS INFOTECH transformed our outdated platform into a cutting-edge digital experience. Their attention to detail and technical expertise are unmatched.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200",
-    rating: 5
+    company: "Prepco Healthcare",
+    content: "I want to take a moment to thank you and your entire team for your hard work and dedication in completing the Prepco Healthcare website (prepcohealthcare.com). Your patience and understanding throughout this process have been invaluable. I really appreciate your team's ability to adapt to the changes and challenges we've faced over the past few months.",
+    rating: 5.0,
+    linkedIn: "https://www.linkedin.com/in/lakshmi-nandhakumar-28209b392/",
+    link: "https://prepcohealthcare.com/"
   },
   {
     id: "2",
-    name: "Sarah Jenkins",
-    role: "Marketing Director",
-    company: "GreenLife Co.",
-    content: "The custom dashboard they built for us has revolutionized our workflow. It's intuitive, fast, and exactly what we needed to scale our operations.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200",
-    rating: 5
+    name: "Kishore Jeyachandran",
+    role: "CEO",
+    company: "R.K.BROTHERS AGRO FOODS PVT LTD",
+    content: "If you want to turn your dream website into reality, I highly recommend Nous Infotech. Their skilled, passionate team delivers exceptional web development and outstanding service.",
+    rating: 5.0,
+    linkedIn: "https://www.linkedin.com/in/kishore-jeyachandran-jk-blog/",
+    link: "https://www.kindrice.co/"
   },
   {
     id: "3",
-    name: "Michael Chen",
-    role: "Founder",
-    company: "Startuply",
-    content: "Working with the team at NOUS was a breeze. They understood our vision from day one and delivered a high-performance web app that our users love.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
-    rating: 5
+    name: "Nithin Alexander",
+    role: "Founder & CEO",
+    company: " ENTREPRENEURS OF MADRAS",
+    content: "Nous Infotech crafted our community website with exceptional care and understanding, ensuring it truly represented our vision. Their transparent process, from strategy calls to delivery, was impressive. I highly recommend their services to anyone seeking a professional and dedicated team!",
+    rating: 5.0,
+    linkedIn: "https://www.linkedin.com/in/nithin-alexander/",
+    link: "https://www.entrepreneursofmadras.com/"
   },
   {
     id: "4",
-    name: "Emily Rodriguez",
-    role: "Product Manager",
-    company: "VibeDesign",
-    content: "Exceptional quality and communication. The premium animations and smooth transitions they implemented gave our site the edge it needed.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
-    rating: 5
+    name: "Ilyas Imen",
+    role: "Founder & CEO",
+    company: "Last Bite India",
+    content: "From concept to launch, the team delivered our **food delivery website and mobile apps (Android & iOS)** flawlessly. The platform is fast, intuitive, and scalable, with a smooth ordering and delivery flow. Their execution, communication, and attention to detail exceeded our expectations.",
+    rating: 5.0,
+    link: "https://lastbiteindia.com/"
   }
 ];
 
