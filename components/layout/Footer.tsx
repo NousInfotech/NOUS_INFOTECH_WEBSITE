@@ -116,6 +116,7 @@ export const Footer = () => {
               <a 
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=nousinfotechq@gmail.com.com&su=Business%20Inquiry&body=Hello%20Suhail,%0A%0AI%20would%20like%20to%20connect." 
                 className="hover:text-primary transition-colors"
+                target="_blank"
               >
                 nousinfotechq@gmail.com
               </a>

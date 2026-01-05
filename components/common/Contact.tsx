@@ -21,21 +21,21 @@ const ContactForm = ({
     name: "",
     email: "",
     phoneNo: "",
-    countryCode: "+91",
+    countryCode: "91",
     message: "",
   });
 
   const COUNTRY_CODES = [
-    { code: "+91", label: "IND" },
-    { code: "+1", label: "USA" },
-    { code: "+44", label: "UK" },
-    { code: "+971", label: "UAE" },
-    { code: "+61", label: "AUS" },
-    { code: "+65", label: "SGP" },
-    { code: "+49", label: "GER" },
-    { code: "+33", label: "FRA" },
-    { code: "+81", label: "JPN" },
-    { code: "+86", label: "CHN" },
+    { code: "91", label: "IND" },
+    { code: "1", label: "USA" },
+    { code: "44", label: "UK" },
+    { code: "971", label: "UAE" },
+    { code: "61", label: "AUS" },
+    { code: "65", label: "SGP" },
+    { code: "49", label: "GER" },
+    { code: "33", label: "FRA" },
+    { code: "81", label: "JPN" },
+    { code: "86", label: "CHN" },
   ];
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
