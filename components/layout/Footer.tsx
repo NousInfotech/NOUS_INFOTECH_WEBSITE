@@ -21,7 +21,7 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-background border-t border-foreground/10 px-5 md:px-10 py-20 mt-20">
+    <footer className="bg-linear-to-b from-primary/20 via-primary/5 to-background backdrop-blur-3xl border-t border-primary/30 px-5 md:px-10 py-20 mt-20 relative shadow-[0_-40px_80px_-20px_rgba(0,0,0,0.7),inset_0_1px_2px_rgba(255,255,255,0.1)]">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
         {/* Brand */}
         <div className="md:col-span-2">

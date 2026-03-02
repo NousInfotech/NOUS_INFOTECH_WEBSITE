@@ -24,7 +24,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-9999 bg-background/20 backdrop-blur-sm border-b border-foreground/10">
+    <nav className="fixed top-0 left-0 w-full z-9999 bg-background/20 backdrop-blur-lg border-b border-foreground/10">
       <div className="mx-auto px-6 h-[85px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-1 group">
           <div className="w-[150px] relative transition-all duration-500 group-hover:scale-105">
