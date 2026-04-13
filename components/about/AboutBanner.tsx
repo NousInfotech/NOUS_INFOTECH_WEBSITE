@@ -18,7 +18,7 @@ const AboutBanner = () => {
             <div className="border-beam rounded-3xl p-[2px] border-primary">
               <div className="border-beam-content rounded-[calc(1.5rem-2px)] relative aspect-4/5 md:aspect-square overflow-hidden shadow-2xl">
                 <Image
-                  src="/team/nous-ceo1.png"
+                  src="/team/rasmi_founder.jpeg"
                   alt="CEO of Nous Infotech"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -70,7 +70,7 @@ const AboutBanner = () => {
               className="space-y-5"
             >
               <div>
-                <h3 className="text-xl font-medium">Suhail Ahmed</h3>
+                <h3 className="text-xl font-medium">Rasmiya Ayoub</h3>
                 <p className="text-primary font-medium uppercase tracking-widest text-xs">
                   Founder & CEO
                 </p>
@@ -83,9 +83,9 @@ const AboutBanner = () => {
                 </p>
                 <div className="flex items-center gap-4">
                   {[
-                    { icon: Linkedin, href: "https://www.linkedin.com/in/suhail-ahamed/", label: "LinkedIn" },
-                    { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=Suhxil14@gmail.com&su=Business%20Inquiry&body=Hello%20Suhail,%0A%0AI%20would%20like%20to%20connect.", label: "Email" },
-                    { icon: Instagram, href: "https://www.instagram.com/ahmedddddd.ddddd?igsh=MXJ0MTRtam1mZHd5Yw==", label: "Instagram" },
+                    { icon: Linkedin, href: "https://www.linkedin.com/in/rasmiya-ayoub/", label: "LinkedIn" },
+                    { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=rasmioff@gmail.com&su=Business%20Inquiry&body=Hello%20Rasmiya,%0A%0AI%20would%20like%20to%20connect.", label: "Email" },
+                    // { icon: Instagram, href: "https://www.instagram.com/ahmedddddd.ddddd?igsh=MXJ0MTRtam1mZHd5Yw==", label: "Instagram" },
                    ].map((social, idx) => (
                     <motion.a
                       key={idx}

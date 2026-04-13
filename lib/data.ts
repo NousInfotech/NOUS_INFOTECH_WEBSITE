@@ -1,4 +1,13 @@
-import { Project, Expertise, Package, TeamMember, TimelineData, TestimonialData } from "@/types/dataTypes";
+import {
+  Project,
+  Expertise,
+  Package,
+  TeamMember,
+  TimelineData,
+  TestimonialData,
+  AboutPillar,
+  AboutFaqItem,
+} from "@/types/dataTypes";
 import {
   Code,
   LayoutDashboard,
@@ -21,6 +30,7 @@ export const navLinks = [
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
+  { name: "Partners", href: "/partners" },
   // { name: "AI Agent", href: "/ai-agent"}
 ];
 
@@ -454,6 +464,69 @@ export const timelineData: TimelineData[] = [
     description: "Finalize deliverables, complete validations, handover documentation, and provide ongoing support.",
     image: "/time-line-images/solution-design.jpg"
   }
+];
+
+// About page — mission, vision, values
+export const aboutMissionVisionValues: AboutPillar[] = [
+  {
+    title: "Mission",
+    description:
+      "Deliver thoughtful digital products that merge technical rigor with creative clarity—so every brand we touch feels unmistakably itself online.",
+  },
+  {
+    title: "Vision",
+    description:
+      "To be a trusted partner for teams that care about craft: long-term relationships, transparent collaboration, and outcomes that age well.",
+  },
+  {
+    title: "Values",
+    description:
+      "Quality over volume, honesty in scope and timelines, and respect for your time—every pixel and line of code earns its place.",
+  },
+];
+
+// About page — expertise snapshot (philosophical angle; full grid lives on /expertise)
+export const aboutExpertiseSnapshot = {
+  headline: "Built for brands that want more than",
+  headlineAccent: "a template.",
+  body: "We sit at the intersection of engineering and design: performant stacks, accessible interfaces, and identities that stay coherent as you grow. Explore the full capability map when you are ready—we scale depth to match the engagement.",
+  focusAreas: [
+    "Web & product UI",
+    "E‑commerce & platforms",
+    "Mobile experiences",
+    "Brand‑aligned systems",
+    "Performance & SEO",
+    "Ongoing partnership",
+  ],
+};
+
+// About page — working together FAQ
+export const aboutFaqItems: AboutFaqItem[] = [
+  {
+    question: "How do we start a project?",
+    answer:
+      "We begin with a discovery call: goals, audience, constraints, and success criteria. From there we share a concise proposal—scope, milestones, and commercial terms—before any build work begins.",
+  },
+  {
+    question: "What does communication look like during delivery?",
+    answer:
+      "You get regular checkpoints, async updates, and a single clear thread for decisions. Larger engagements include structured design reviews and incremental demos so feedback lands at the right time.",
+  },
+  {
+    question: "Typical timelines and how changes are handled",
+    answer:
+      "Timelines depend on scope; we quote phases with dates, not vague ranges. Scope changes go through a short change request so priorities, cost, and schedule stay aligned.",
+  },
+  {
+    question: "What do you need from us as a client?",
+    answer:
+      "A point of contact for decisions, brand assets when relevant, and timely feedback on reviews. The smoother the inputs, the faster we ship without compromising quality.",
+  },
+  {
+    question: "Support after launch",
+    answer:
+      "We offer handover documentation and can agree on a support window or retainer for updates, monitoring, and iteration—tailored to how you operate.",
+  },
 ];
 
 

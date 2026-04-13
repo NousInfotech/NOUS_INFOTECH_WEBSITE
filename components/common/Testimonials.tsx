@@ -6,11 +6,12 @@ import { Star, Quote, Linkedin, Link2 } from "lucide-react";
 import { Badge } from "../ui/Badge";
 import { ScrollReveal } from "../animation/ScrollReveal";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
-const Testimonials = ({className}: {className?: string}) => {
-  // Triple the data for seamless looping in marquee if it was but we use a grid for now for better readability of content
-  // Or better, a horizontal scroll marquee for premium feel
-  
+const Testimonials = ({ className }: { className?: string }) => {
   return (
     <section className={`bg-background relative overflow-hidden ${className}`}>
       {/* Background Decorative Elements */}
@@ -29,99 +30,112 @@ const Testimonials = ({className}: {className?: string}) => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonialsData.map((testimonial, index) => (
-            <ScrollReveal key={testimonial.id} delay={index * 0.1} height="100%">
-              <motion.div
-                className="bg-foreground/0.02 border border-primary/50 p-8 rounded-3xl relative group transition-colors hover:border-primary/20 hover:bg-foreground/0.03 h-full flex flex-col"
-              >
-                <Quote className="absolute top-8 right-8 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
-                
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => {
-                      const rating = testimonial.rating;
-                      const isFull = i + 1 <= Math.floor(rating);
-                      const isExtra = i + 1 > Math.ceil(rating);
-                      const isHalf = !isFull && !isExtra;
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          slidesPerView={1}
+          spaceBetween={32}
+          loop
+          autoplay={{
+            delay: 15000,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          className="testimonials-swiper !pb-12 [&_.swiper-pagination-bullet]:bg-foreground/25 [&_.swiper-pagination-bullet]:opacity-100 [&_.swiper-pagination-bullet-active]:bg-primary [&_.swiper-pagination-bullet-active]:scale-110"
+        >
+          {testimonialsData.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <div className="max-w-4xl mx-auto h-full">
+                <motion.div
+                  className="bg-foreground/0.02 border border-primary/50 p-8 rounded-3xl relative group transition-colors hover:border-primary/20 hover:bg-foreground/0.03 h-full min-h-[280px] md:min-h-[240px] flex flex-col"
+                >
+                  <Quote className="absolute top-8 right-8 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
 
-                      return (
-                        <div key={i} className="relative">
-                          <Star className="w-4 h-4 text-primary/20" />
-                          {isFull && (
-                            <Star className="w-4 h-4 fill-primary text-primary absolute top-0 left-0" />
-                          )}
-                          {isHalf && (
-                            <div className="absolute top-0 left-0 w-[50%] overflow-hidden">
-                              <Star className="w-4 h-4 fill-primary text-primary" />
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => {
+                        const rating = testimonial.rating;
+                        const isFull = i + 1 <= Math.floor(rating);
+                        const isExtra = i + 1 > Math.ceil(rating);
+                        const isHalf = !isFull && !isExtra;
+
+                        return (
+                          <div key={i} className="relative">
+                            <Star className="w-4 h-4 text-primary/20" />
+                            {isFull && (
+                              <Star className="w-4 h-4 fill-primary text-primary absolute top-0 left-0" />
+                            )}
+                            {isHalf && (
+                              <div className="absolute top-0 left-0 w-[50%] overflow-hidden">
+                                <Star className="w-4 h-4 fill-primary text-primary" />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                      {testimonial.rating.toFixed(1)}
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                    {testimonial.rating.toFixed(1)}
-                  </span>
-                </div>
 
-                <p className="text-sm md:text-lg text-foreground/80 mb-8 italic leading-relaxed grow">
-                  &quot;{testimonial.content}&quot;
-                </p>
+                  <p className="text-sm md:text-lg text-foreground/80 mb-8 italic leading-relaxed grow">
+                    &quot;{testimonial.content}&quot;
+                  </p>
 
-                <div className="flex md:flex-row flex-col md:items-center items-start justify-between gap-4 mt-auto">
-                  <div className="flex items-center gap-2">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
-                    {testimonial.image ? (
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary font-bold">
-                        {testimonial.name.charAt(0)}
+                  <div className="flex md:flex-row flex-col md:items-center items-start justify-between gap-4 mt-auto">
+                    <div className="flex items-center gap-2">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 shrink-0">
+                        {testimonial.image ? (
+                          <Image
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            {testimonial.name.charAt(0)}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                    <p className="text-sm text-foreground/60">
-                      {testimonial.role} @ <span className="text-primary/80">{testimonial.company}</span>
-                    </p>
-                  </div>
-                  </div>
+                      <div>
+                        <h4 className="font-bold text-foreground">{testimonial.name}</h4>
+                        <p className="text-sm text-foreground/60">
+                          {testimonial.role} @ <span className="text-primary/80">{testimonial.company}</span>
+                        </p>
+                      </div>
+                    </div>
 
-                  <div className="flex gap-2">
-                    {testimonial.link && (
-                      <Link 
-                        href={testimonial.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-primary/5 text-primary/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                        title="Visit Website"
-                      >
-                        <Link2 size={16}/>
-                      </Link>
-                    )}
-                    {testimonial.linkedIn && (
-                      <Link 
-                        href={testimonial.linkedIn} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-primary/5 text-primary/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                        title="LinkedIn Profile"
-                      >
-                        <Linkedin size={16}/>
-                      </Link>
-                    )}
+                    <div className="flex gap-2">
+                      {testimonial.link && (
+                        <Link
+                          href={testimonial.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-primary/5 text-primary/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                          title="Visit Website"
+                        >
+                          <Link2 size={16} />
+                        </Link>
+                      )}
+                      {testimonial.linkedIn && (
+                        <Link
+                          href={testimonial.linkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-primary/5 text-primary/60 hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                          title="LinkedIn Profile"
+                        >
+                          <Linkedin size={16} />
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </ScrollReveal>
+                </motion.div>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

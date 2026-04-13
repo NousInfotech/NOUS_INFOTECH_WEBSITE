@@ -65,4 +65,14 @@ export interface TestimonialData {
   link?: string;
 }
 
+export interface AboutPillar {
+  title: string;
+  description: string;
+}
+
+export interface AboutFaqItem {
+  question: string;
+  answer: string;
+}
+
 
