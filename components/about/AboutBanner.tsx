@@ -18,7 +18,7 @@ const AboutBanner = () => {
             <div className="border-beam rounded-3xl p-[2px] border-primary">
               <div className="border-beam-content rounded-[calc(1.5rem-2px)] relative aspect-4/5 md:aspect-square overflow-hidden shadow-2xl">
                 <Image
-                  src="/team/rasmi_founder.jpeg"
+                  src="/team/nous-ceo1.png"
                   alt="CEO of Nous Infotech"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -70,7 +70,7 @@ const AboutBanner = () => {
               className="space-y-5"
             >
               <div>
-                <h3 className="text-xl font-medium">Rasmiya Ayoub</h3>
+                <h3 className="text-xl font-medium">Suhail</h3>
                 <p className="text-primary font-medium uppercase tracking-widest text-xs">
                   Founder & CEO
                 </p>
