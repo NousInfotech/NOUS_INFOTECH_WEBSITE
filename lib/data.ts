@@ -35,6 +35,13 @@ export const navLinks = [
 // Projects Data
 export const projects: Project[] = [
 {
+  title: "VACEI",
+  category: "Platform | Web Development",
+  image: "/project-images/vacei.png",
+  link: "https://vacei.com/",
+  year: 2025,
+},
+{
   title: "Space Sculpt",
   category: "Website | Development",
   image: "/project-images/spacesculpt.png",
