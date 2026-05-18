@@ -8,12 +8,14 @@ import AboutStory from "./AboutStory";
 import AboutMissionVision from "./AboutMissionVision";
 import AboutExpertiseSnapshot from "./AboutExpertiseSnapshot";
 import AboutFaq from "./AboutFaq";
+import AboutTeamCard from "./AboutTeamCard";
 
 const About = () => {
   return (
     <PageWrapper>
       <section className="md:px-10 px-5 mx-auto py-10 space-y-20">
         <AboutBanner />
+        <AboutTeamCard/>
         <AboutStory />
         <AboutMissionVision />
         <AboutExpertiseSnapshot />

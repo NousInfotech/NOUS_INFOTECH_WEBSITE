@@ -372,16 +372,16 @@ export const teamMembers: TeamMember[] = [
       {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
     ]
    },
-      {
-    name: "Sivajnanam S",
-    role: "Full Stack Developer",
-    image: "/team/siva.jpeg",
-    socials: [
-      {platform: 'linkedin', url: 'https://www.linkedin.com/in/siva-s-6821ba321'},
-      // {platform: 'twitter', url: 'https://x.com/KannanRavi14140'},
-      // {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
-    ]
-   },
+  //     {
+  //   name: "Sivajnanam S",
+  //   role: "Full Stack Developer",
+  //   image: "/team/siva.jpeg",
+  //   socials: [
+  //     {platform: 'linkedin', url: 'https://www.linkedin.com/in/siva-s-6821ba321'},
+  //     // {platform: 'twitter', url: 'https://x.com/KannanRavi14140'},
+  //     // {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
+  //   ]
+  //  },
 ];
 
 // Testimonials Data
