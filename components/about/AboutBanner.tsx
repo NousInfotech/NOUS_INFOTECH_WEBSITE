@@ -6,7 +6,7 @@ import { Linkedin, Mail } from "lucide-react";
 import { aboutPageContent } from "@/lib/data";
 import { Badge } from "../ui/Badge";
 
-const { banner, stats } = aboutPageContent;
+const { banner, highlights } = aboutPageContent;
 
 const leaderSocials = [
   {
@@ -42,20 +42,20 @@ export default function AboutBanner() {
       </motion.div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        {stats.map((stat, index) => (
+        {highlights.map((item, index) => (
           <motion.div
-            key={stat.label}
+            key={item.title}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.08 }}
             className="rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-5 md:p-6 text-center hover:border-primary/30 transition-colors duration-300"
           >
-            <p className="text-2xl md:text-4xl font-medium tracking-tighter text-primary">
-              {stat.value}
+            <p className="text-lg md:text-xl font-medium tracking-tight text-primary">
+              {item.title}
             </p>
-            <p className="text-[10px] md:text-xs uppercase tracking-widest text-foreground/50 mt-2 font-medium">
-              {stat.label}
+            <p className="text-[10px] md:text-xs uppercase tracking-widest text-foreground/50 mt-2 font-medium leading-snug">
+              {item.description}
             </p>
           </motion.div>
         ))}

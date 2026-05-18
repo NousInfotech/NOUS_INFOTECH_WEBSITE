@@ -447,7 +447,7 @@ export const timelineData: TimelineData[] = [
   }
 ];
 
-// About page — hero, story, team, stats
+// About page — hero, story, team, highlights
 export const aboutPageContent = {
   banner: {
     eyebrow: "About Nous Infotech",
@@ -465,11 +465,11 @@ export const aboutPageContent = {
     leaderTaglinePrefix: "Driving Innovation",
     leaderTaglineAccent: "with Purpose.",
   },
-  stats: [
-    { value: "50+", label: "Solutions delivered" },
-    { value: "4", label: "Core specialists" },
-    { value: "100%", label: "Partnership-focused" },
-    { value: "NDA", label: "Confidential demos" },
+  highlights: [
+    { title: "Automate", description: "Workflows & manual operations" },
+    { title: "Integrate", description: "Scattered tools & systems" },
+    { title: "Partner", description: "Long-term technology support" },
+    { title: "Build", description: "Custom apps & digital products" },
   ],
   story: {
     title: "The story",
