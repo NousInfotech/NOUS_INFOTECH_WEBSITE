@@ -4,7 +4,10 @@ import Image from 'next/image';
 import { TeamMember } from '@/types/dataTypes';
 import { Linkedin, Github, Instagram } from 'lucide-react'; 
 import { BsTwitterX } from 'react-icons/bs';
-import { teamMembers } from '@/lib/data';
+import { teamMembers, aboutPageContent } from '@/lib/data';
+import { Badge } from '../ui/Badge';
+
+const { team } = aboutPageContent;
 
 const socialIcons = {
   linkedin: Linkedin,
@@ -119,16 +122,21 @@ const AboutTeam = ({ member, index }: { member: TeamMember, index: number }) => 
 
 export default function AboutTeamCard() {
   return (
-      <div className="space-y-4">
+      <div className="space-y-8 md:space-y-10">
           <ScrollReveal>
-            <div>
-              <h2 className="text-xl md:text-4xl lg:text-6xl font-medium">
-                The Minds <span className="text-primary">Behind the Code.</span>
+            <div className="space-y-4 max-w-3xl">
+              <Badge>{team.eyebrow}</Badge>
+              <h2 className="text-2xl md:text-4xl lg:text-6xl font-medium tracking-tighter leading-tight">
+                {team.title}{" "}
+                <span className="text-primary">{team.titleAccent}</span>
               </h2>
+              <p className="text-sm md:text-lg text-foreground/60 font-light leading-relaxed">
+                {team.subtitle}
+              </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {teamMembers.map((member, index) => (
               <AboutTeam key={member.name} member={member} index={index} />
             ))}

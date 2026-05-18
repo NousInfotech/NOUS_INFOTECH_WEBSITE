@@ -36,7 +36,8 @@ export const FloatingActions = () => {
   }, []);
 
   const whatsappNumber = "+919384102425"; // Updated to a more likely starting point or placeholder
-  const whatsappMessage = "Hello! I'm interested in your services.";
+  const whatsappMessage =
+    "Hello! I'd like to discuss digital transformation and how Nous Infotech can help as our technology partner.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (

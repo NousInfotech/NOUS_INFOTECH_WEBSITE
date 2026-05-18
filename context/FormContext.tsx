@@ -26,13 +26,14 @@ const FormContext = createContext<FormContextType | undefined>(undefined);
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   const searchParams = useSearchParams();
   const initialPlan = searchParams.get("plan") || "";
+  const initialType = searchParams.get("type") || "";
 
   const [state, setState] = useState<FormState>({
     plan: initialPlan,
     category: "",
     budget: "",
     role: "",
-    type: "",
+    type: initialType,
   });
 
   // Sync plan from query params if it changes
@@ -41,6 +42,12 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
       Promise.resolve().then(() => setState((prev) => ({ ...prev, plan: initialPlan })));
     }
   }, [initialPlan, state.plan]);
+
+  useEffect(() => {
+    if (initialType && state.type !== initialType) {
+      Promise.resolve().then(() => setState((prev) => ({ ...prev, type: initialType })));
+    }
+  }, [initialType, state.type]);
 
   const setPlan = (plan: string) => setState((prev) => ({ ...prev, plan }));
   const setCategory = (category: string) => setState((prev) => ({ ...prev, category }));

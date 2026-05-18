@@ -20,12 +20,15 @@ const AboutMissionVision = () => {
             className="text-center max-w-3xl mx-auto space-y-2"
           >
             <span className="text-primary font-medium tracking-[0.2em] uppercase text-sm">
-              Purpose
+              What drives us
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tighter">
-              Mission, vision &{" "}
-              <span className="text-primary">values.</span>
+              Built on partnership,{" "}
+              <span className="text-primary">not transactions.</span>
             </h2>
+            <p className="text-foreground/60 text-sm md:text-base font-light pt-2">
+              The principles that guide every engagement—from first call to years after launch.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

@@ -46,8 +46,9 @@ export const Footer = () => {
           </Link>
 
           <p className="text-foreground/60 max-w-sm mb-8">
-            A premium creative agency specializing in high-performance digital
-            experiences and strategic branding.
+            Your long-term technology partner for digital transformation, business
+            automation, and custom software—plus modern web, app, and branding solutions
+            when you need them.
           </p>
 
           <div className="flex gap-4">

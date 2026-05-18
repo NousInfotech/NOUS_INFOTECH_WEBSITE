@@ -79,8 +79,8 @@ const HomeProjects = () => {
             <Badge>Projects</Badge>
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <h2 className="text-2xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tighter">
-                Crafting digital
-                <span className="text-primary"> excellence.</span>
+                Building digital infrastructure for{" "}
+                <span className="text-primary">modern companies.</span>
               </h2>
               <Link href="/projects" className="hidden md:block">
                 <Button variant="outline" className="group">

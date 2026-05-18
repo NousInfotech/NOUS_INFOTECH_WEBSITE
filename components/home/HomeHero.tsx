@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from 'react'
 import { motion } from "framer-motion";
+import CalendlyLink from '../common/CalendlyLink';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
 import { useTheme } from 'next-themes';
@@ -78,19 +79,26 @@ useEffect(() => {
             transition={{ duration: 0.8 }}
             className='space-y-7'
           >
-            <h1 className="text-2xl md:text-5xl lg:text-8xl leading-none tracking-tighter font-medium">
-              We&apos;re a creative
-              <span className="text-primary"> digital agency</span>
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-primary font-semibold">
+              Technology Partner · Digital Transformation
+            </p>
+            <h1 className="text-2xl md:text-5xl lg:text-7xl  leading-[1.05] tracking-tighter font-medium">
+              Your Technology Partner for{" "}
+              <span className="text-primary">Digital Growth</span>
             </h1>
-            <p className="text-xs md:text-xl text-foreground/70 max-w-xl uppercase tracking-wide">
-              We&apos;re a creative digital agency dedicated to crafting high-end digital experiences that define industries.
+            <p className="text-sm md:text-xl text-foreground/70 max-w-2xl leading-relaxed font-light">
+              We transform scattered operations into smart digital systems—helping
+              businesses digitalize, automate workflows, and scale with a team that
+              works like your external tech department.
             </p>
             <div className="flex md:flex-row flex-col gap-4">
-              <Link href="/hire-us">
-                <Button className='text-white w-full'>Hire Our Agency</Button>
-              </Link>
+              <CalendlyLink>
+                <Button className="text-white w-full">Book a Consultation</Button>
+              </CalendlyLink>
               <Link href="/projects">
-                <Button variant="outline" className='w-full'>View Projects</Button>
+                <Button variant="outline" className="w-full">
+                  View Our Work
+                </Button>
               </Link>
             </div>
           </motion.div>

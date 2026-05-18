@@ -21,12 +21,12 @@ export const ExpertiseGrid = ({ limit, className = "grid grid-cols-1 md:grid-col
               <div className="mb-8 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
                 <item.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="md:text-2xl text-xl font-semibold mb-4 tracking-tight group-hover:text-primary transition-colors">
+              <h3 className="md:text-2xl text-xl font-semibold mb-3 tracking-tight group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
-              {/* <p className="text-foreground/60 leading-relaxed font-light">
+              <p className="text-sm text-foreground/60 leading-relaxed font-light mb-2">
                 {item.description}
-              </p> */}
+              </p>
               {item.points && (
                 <ul className="mt-6 space-y-2">
                   {item.points.map((point, i) => (

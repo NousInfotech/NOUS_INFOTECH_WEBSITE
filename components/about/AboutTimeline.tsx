@@ -28,7 +28,7 @@ const AboutTimeline = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl lg:text-7xl font-medium tracking-tighter"
         >
-          Our <span className="text-primary">Process</span>
+          How we <span className="text-primary">partner with you</span>
         </motion.h2>
       </div>
 
