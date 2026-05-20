@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/Button";
-import { ArrowRight, CheckCircle2, AlertCircle, Loader2, Edit } from "lucide-react";
+import { ArrowRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { sendFormData, FormPayload } from "@/api/sendFormData";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFormContext } from "@/context/FormContext";
@@ -181,7 +181,7 @@ const ContactForm = ({
               required
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className="w-full bg-transparent border-b border-foreground/10 py-4 outline-none focus:border-primary transition-colors font-medium resize-none"
-              placeholder="Tell us about your project goals, timeline, and requirements..."
+              placeholder="Tell us about your business, current challenges, and what you'd like to improve..."
             />
           </div>
 
@@ -220,9 +220,11 @@ const ContactForm = ({
                   Selected Plan: <span className="text-primary uppercase font-bold">{state.plan}</span>
                 </p>
                 </div>
+                {/* Pricing page temporarily disabled
                 <Link href="/pricing">
-                  <Edit/>
-                  </Link>
+                  <Edit />
+                </Link>
+                */}
               </div>
             )}
 

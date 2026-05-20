@@ -10,9 +10,9 @@ import Script from "next/script";
  
 
 export const metadata: Metadata = {
-  title: "NOUS INFOTECH | Premium Creative Agency",
-  description: "High-performance digital experiences and strategic branding.",
-  
+  title: "NOUS INFOTECH | Technology Partner for Digital Growth",
+  description:
+    "Long-term technology partner helping businesses digitalize, automate workflows, and unify scattered operations—with custom software, AI integration, and modern digital solutions.",
 };
 
 export default function RootLayout({

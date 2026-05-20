@@ -15,9 +15,9 @@ const About = () => {
     <PageWrapper>
       <section className="md:px-10 px-5 mx-auto py-10 space-y-20">
         <AboutBanner />
-        <AboutTeamCard/>
         <AboutStory />
         <AboutMissionVision />
+        <AboutTeamCard />
         <AboutExpertiseSnapshot />
         <AboutFaq />
         <Testimonials />

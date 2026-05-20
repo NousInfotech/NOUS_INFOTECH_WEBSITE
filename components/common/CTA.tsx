@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "../ui/Button";
 import { ScrollReveal } from "../animation/ScrollReveal";
 import BackgroundBlur from "../animation/BackgroundBlur";
+import { CALENDLY_BOOKING_URL, isExternalUrl } from "@/lib/calendly";
 
 interface CTAProps {
   title?: string;
@@ -16,10 +17,11 @@ interface CTAProps {
 }
 
 const CTA: React.FC<CTAProps> = ({
-  title = "Let's Build Something Great",
-  subtitle = "Web • Apps • Brand • Strategy",
-  buttonText = "Work With Us",
-  buttonLink = "/contact",
+  title = "Ready to simplify your operations?",
+  subtitle =
+    "Partner with a team that digitalizes, automates, and builds the systems your business needs to scale.",
+  buttonText = "Book a Consultation",
+  buttonLink = CALENDLY_BOOKING_URL,
   align = "center",
   className = "",
 }) => {
@@ -44,10 +46,13 @@ const CTA: React.FC<CTAProps> = ({
             {subtitle}
           </p>
 
-          <Link href={buttonLink}>
-            <Button>
-              {buttonText}
-            </Button>
+          <Link
+            href={buttonLink}
+            {...(isExternalUrl(buttonLink)
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            <Button>{buttonText}</Button>
           </Link>
         </ScrollReveal>
       </section>

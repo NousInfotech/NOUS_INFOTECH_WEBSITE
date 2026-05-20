@@ -1,8 +1,9 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
+import { ArrowRight, Layers, Workflow, Handshake } from 'lucide-react';
 import { Button } from '../ui/Button';
 import Link from 'next/link';
+import CalendlyLink from '../common/CalendlyLink';
 import BackgroundBlur from '../animation/BackgroundBlur';
 import { Badge } from '../ui/Badge';
 
@@ -28,9 +29,9 @@ const HomeAbout = () => {
   }, []);
 
   const features = [
-    { icon: Sparkles, text: 'Innovative Design', delay: 0.3 },
-    { icon: Zap, text: 'Fast Delivery', delay: 0.4 },
-    { icon: Target, text: 'Result-Driven', delay: 0.5 }
+    { icon: Layers, text: 'Digital Transformation', delay: 0.3 },
+    { icon: Workflow, text: 'Workflow Automation', delay: 0.4 },
+    { icon: Handshake, text: 'Long-Term Partnership', delay: 0.5 },
   ];
 
   return (
@@ -44,20 +45,24 @@ const HomeAbout = () => {
         <div className="relative mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                  <div className='flex flex-col items-start'>
-                  <Badge>Who We Are</Badge>
-                  <span className='text-2xl md:text-5xl lg:text-6xl font-medium'>
-                    We create <span className="text-primary">unique digital experiences.</span>
+                  <Badge>Your Technology Partner</Badge>
+                  <span className="text-2xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tighter">
+                    We transform scattered operations into{" "}
+                    <span className="text-primary">smart digital systems.</span>
                   </span>
                </div>
              {/* Right Column - Content */}
               <div className="space-y-8">
-                <p className="text-sm md:text-2xl leading-relaxed opacity-90 font-extralight">
-                  We are passionate about our work and its positive impact on clients. 
-                  We consistently deliver exceptional web solutions, offering a{' '}
-                  <span className="font-semibold opacity-100">best-in-class digital experience</span>. 
-                  Our primary focus is on{' '}
-                  <span className="font-semibold opacity-100">client satisfaction</span>, 
-                  ensuring that we meet and exceed their specific needs.
+                <p className="text-sm md:text-xl leading-relaxed text-foreground/80 font-light">
+                  Many businesses run on manual workflows, disconnected tools, and
+                  operational clutter. We step in as your{" "}
+                  <span className="font-medium text-foreground">
+                    long-term technology partner
+                  </span>
+                  —digitalizing processes, automating what slows you down, and building
+                  unified systems your team can rely on. From startups to established
+                  companies, we help you scale with technology that feels simple, not
+                  overwhelming.
                 </p>
               {/* Feature Pills */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -77,12 +82,19 @@ const HomeAbout = () => {
                   );
                 })}
               </div>
-                <Link href="/about">
-                <Button className='md:w-auto w-full'>
-                  About Agency
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Button>
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <CalendlyLink>
+                    <Button className="md:w-auto w-full">
+                      Discuss Digital Transformation
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Button>
+                  </CalendlyLink>
+                  <Link href="/about">
+                    <Button variant="outline" className="md:w-auto w-full">
+                      About Us
+                    </Button>
+                  </Link>
+                </div>
             </div>
           </div>
         </div>

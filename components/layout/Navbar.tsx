@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import CalendlyLink from "@/components/common/CalendlyLink";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -54,11 +55,11 @@ export const Navbar = () => {
               )}
             </Link>
           ))}
-          <Link href="/hire-us">
+          <CalendlyLink>
             <button className="cursor-pointer bg-primary text-white px-6 py-2 text-xs font-medium uppercase tracking-widest hover:opacity-90 transition-opacity rounded-2xl">
-              Hire Us
+              Partner With Us
             </button>
-          </Link>
+          </CalendlyLink>
           <ThemeToggle />
         </div>
 
@@ -91,9 +92,9 @@ export const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link href="/hire-us" onClick={() => setIsOpen(false)}>
-            <Button className="w-full">Hire Us</Button>
-          </Link>
+          <CalendlyLink onClick={() => setIsOpen(false)}>
+            <Button className="w-full">Partner With Us</Button>
+          </CalendlyLink>
         </motion.div>
       )}
     </nav>

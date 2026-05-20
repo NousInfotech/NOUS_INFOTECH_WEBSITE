@@ -11,14 +11,12 @@ import {
 import {
   Code,
   LayoutDashboard,
-  ShoppingCart,
-  Smartphone,
-  Server,
-  CreditCard,
+  Link2,
   Bot,
-  Rocket,
+  Layers,
+  Workflow,
+  Handshake,
   Palette,
-  LifeBuoy,
 } from "lucide-react";
 
 export const navLinks = [
@@ -26,7 +24,7 @@ export const navLinks = [
   { name: "About", href: "/about" },
   { name: "Expertise", href: "/expertise" },
   { name: "Projects", href: "/projects" },
-  { name: "Pricing", href: "/pricing" },
+  // { name: "Pricing", href: "/pricing" }, // Temporarily disabled
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
@@ -36,6 +34,13 @@ export const navLinks = [
 
 // Projects Data
 export const projects: Project[] = [
+{
+  title: "VACEI",
+  category: "Platform | Web Development",
+  image: "/project-images/vacei.png",
+  link: "https://vacei.com/",
+  year: 2025,
+},
 {
   title: "Space Sculpt",
   category: "Website | Development",
@@ -144,127 +149,110 @@ export const projects: Project[] = [
 
 ];
 
-// Expertise Data
+// Expertise Data — solution-oriented for technology partnership positioning
 export const expertiseData: Expertise[] = [
   {
-    title: "Web & App Development",
-    description: "Building high-performance, scalable digital products using cutting-edge technologies.",
-    icon: Code,
+    title: "Digital Transformation & Operations",
+    description:
+      "We help businesses move from scattered tools and manual work to a clear, modern digital foundation built for growth.",
+    icon: Layers,
     color: "from-blue-500/20 to-primary/20",
     points: [
-      "Fast, responsive & device-friendly builds",
-      "Scalable architecture for future growth",
-      "Modern tech stack & best coding practices",
-      "Customized to your brand & goals",
+      "Assess workflows, tools, and operational bottlenecks",
+      "Roadmap digitalization with realistic phases",
+      "Align tech decisions with business goals",
+      "Build infrastructure that scales with you",
     ],
   },
   {
-    title: "Custom Web Applications & Dashboards",
-    description: "Tailor-made applications and dashboards designed to automate workflows and visualize business data.",
-    icon: LayoutDashboard,
+    title: "Workflow & Process Automation",
+    description:
+      "Turn repetitive manual tasks into reliable automated flows—so your team spends time on decisions, not data entry.",
+    icon: Workflow,
     color: "from-purple-500/20 to-pink-500/20",
     points: [
-      "Custom workflows & automation",
-      "Real-time data visualization",
-      "Secure authentication & access control",
-      "Built to align with internal operations",
+      "Automate approvals, reporting, and handoffs",
+      "Reduce errors from copy-paste and spreadsheets",
+      "Connect teams with smoother internal processes",
+      "From manual workflows to automated businesses",
     ],
   },
   {
-    title: "E-commerce & Marketplace Solutions",
-    description: "End-to-end marketplace platforms with secure transactions, logistics, and custom product logic.",
-    icon: ShoppingCart,
+    title: "Custom Business Software & Dashboards",
+    description:
+      "Purpose-built tools, portals, and dashboards that match how your company actually works—not generic off-the-shelf limits.",
+    icon: LayoutDashboard,
     color: "from-amber-500/20 to-orange-500/20",
     points: [
-      "Payment integration (UPI, Stripe, Razorpay, PayPal, etc.)",
-      "Shipping integration with live tracking",
-      "Inventory management & stock control",
-      "Analytics for sales & performance",
-      "Custom logic for unique/special products",
+      "Internal tools tailored to your operations",
+      "Real-time visibility into sales, ops, or inventory",
+      "Role-based access and secure data handling",
+      "Replace fragmented spreadsheets with one system",
     ],
   },
   {
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile apps built for performance, reliability, and user engagement.",
-    icon: Smartphone,
+    title: "Systems Integration & Unified Operations",
+    description:
+      "When CRMs, spreadsheets, apps, and teams don't talk to each other—we connect them into one coherent digital ecosystem.",
+    icon: Link2,
     color: "from-green-500/20 to-emerald-500/20",
     points: [
-      "iOS & Android app development",
-      "Native & cross-platform builds",
-      "Smooth UI/UX experiences",
-      "API connectivity & cloud sync",
+      "Unify scattered systems into connected workflows",
+      "API integrations across your existing tools",
+      "Single source of truth for critical business data",
+      "Less operational clutter, more clarity",
     ],
   },
   {
-    title: "Backend & API Development",
-    description: "Secure, scalable server architecture and APIs engineered for seamless integration and data flow.",
-    icon: Server,
-    color: "from-gray-500/20 to-blue-500/20",
-    points: [
-      "REST & GraphQL APIs",
-      "Authentication & authorization systems",
-      "High-performance data handling",
-      "Optimized cloud-based server setups",
-    ],
-  },
-  {
-    title: "Payment & Financial Integrations",
-    description: "Payment gateways, subscription billing, invoicing, and financial systems your users can trust.",
-    icon: CreditCard,
-    color: "from-indigo-500/20 to-primary/20",
-    points: [
-      "Payment gateway setup (Stripe, Razorpay, PayPal, etc.)",
-      "Subscription billing & recurring payments",
-      "Automated invoicing & receipts",
-      "Fraud protection & compliance setup",
-    ],
-  },
-  {
-    title: "AI & Automation Solutions",
-    description: "Smart automation, chatbots, machine learning, and AI integrations to accelerate productivity.",
+    title: "AI & Intelligent Automation",
+    description:
+      "Practical AI and smart automation that saves hours—not hype. Chatbots, smart routing, and assistive tools your team will actually use.",
     icon: Bot,
     color: "from-teal-500/20 to-cyan-500/20",
     points: [
-      "Conversational chatbots",
-      "Process automation & workflow bots",
-      "Predictive analytics & ML models",
-      "AI-powered customer & business ops",
+      "AI assistants for support and internal queries",
+      "Automated data capture and categorization",
+      "Smarter notifications and decision support",
+      "Integrate AI where it delivers real ROI",
     ],
   },
   {
-    title: "SEO & Performance Optimization",
-    description: "Boost visibility, speed, rankings, and conversions with technical SEO and performance upgrades.",
-    icon: Rocket,
-    color: "from-yellow-500/20 to-lime-500/20",
+    title: "Web, Apps & Digital Products",
+    description:
+      "High-performance websites, web apps, and mobile products—built to represent your brand and support real business outcomes.",
+    icon: Code,
+    color: "from-indigo-500/20 to-primary/20",
     points: [
-      "Technical SEO & site structure",
-      "Web vitals & speed optimization",
-      "Improved ranking & discoverability",
-      "Conversion-focused UX improvements",
+      "Websites, web apps, and mobile experiences",
+      "E-commerce and customer-facing platforms",
+      "Fast, secure, and built for conversions",
+      "Modern stack with long-term maintainability",
     ],
   },
   {
-    title: "UI/UX Design",
-    description: "User-centered design that blends aesthetics with seamless, intuitive digital experiences.",
+    title: "UI/UX, Branding & Experience Design",
+    description:
+      "Design that feels premium and works effortlessly—for customers, staff, and partners using your digital touchpoints.",
     icon: Palette,
     color: "from-pink-500/20 to-rose-500/20",
     points: [
-      "Wireframes & prototypes",
-      "Visual identity & branding",
-      "User journey & navigation flow",
-      "Design systems & consistency",
+      "Brand identity and visual systems",
+      "Intuitive interfaces for web and mobile",
+      "User journeys that reduce friction",
+      "Consistent experience across every channel",
     ],
   },
   {
-    title: "Maintenance & Support",
-    description: "Reliable, ongoing maintenance, updates, bug fixes, and security monitoring for peace of mind.",
-    icon: LifeBuoy,
+    title: "Long-Term Technology Partnership",
+    description:
+      "We don't disappear after launch. Think of us as your external tech team—evolving systems as your business grows.",
+    icon: Handshake,
     color: "from-slate-500/20 to-slate-700/20",
     points: [
-      "Security patches & monitoring",
-      "Bug fixes & error resolution",
-      "Feature updates & enhancements",
-      "Backups, recovery & uptime care",
+      "Ongoing support, updates, and iteration",
+      "Strategic guidance as needs change",
+      "Dedicated collaboration—not one-off handoffs",
+      "Scale operations with a partner you trust",
     ],
   },
 ];
@@ -347,7 +335,7 @@ export const teamMembers: TeamMember[] = [
     {
     name: "Rasmiya Ayoub",
     role: "Co-Founder & Team Lead",
-    image: "/team/rasmiya.png",
+    image: "/team/rasmi_founder.jpeg",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/rasmiya-ayoub/' },
     ]
@@ -441,7 +429,7 @@ export const timelineData: TimelineData[] = [
   },
   {
     title: "Commercial Finalization",
-    description: "Finalize pricing, deliverables, timelines, responsibilities, payment terms, and acceptance conditions collaboratively.",
+    description: "Finalize scope, deliverables, timelines, responsibilities, payment terms, and acceptance conditions collaboratively.",
     image: "/time-line-images/desing-review.jpg"
   },
   {
@@ -466,66 +454,108 @@ export const timelineData: TimelineData[] = [
   }
 ];
 
+// About page — hero, story, team, highlights
+export const aboutPageContent = {
+  banner: {
+    eyebrow: "About Nous Infotech",
+    headline: "Your technology partner for",
+    headlineAccent: "real business transformation.",
+    description:
+      "We are a focused team of engineers, designers, and strategists who help companies escape manual chaos—digitalizing operations, automating workflows, and building software that becomes the backbone of how you grow.",
+    leaderSectionEyebrow: "Together we can achieve more",
+    leaderName: "Suhail",
+    leaderRole: "Founder & CEO",
+    leaderImage: "/team/nous-ceo1.png",
+    leaderQuote:
+      "If you can dream about it, if you can picture it in your mind",
+    leaderQuoteAccent: "THEN YOU CAN ACHIEVE IT",
+    leaderTaglinePrefix: "Driving Innovation",
+    leaderTaglineAccent: "with Purpose.",
+  },
+  highlights: [
+    { title: "Automate", description: "Workflows & manual operations" },
+    { title: "Integrate", description: "Scattered tools & systems" },
+    { title: "Partner", description: "Long-term technology support" },
+    { title: "Build", description: "Custom apps & digital products" },
+  ],
+  story: {
+    title: "The story",
+    titleAccent: "behind Nous.",
+    paragraphs: [
+      "Nous Infotech started with a simple observation: too many capable businesses were held back not by ambition, but by scattered tools, manual processes, and technology that never quite fit how they actually worked.",
+      "We set out to be different—not another vendor shipping templates, but a long-term partner that listens first, designs with intent, and builds systems teams trust. From workflow automation and custom dashboards to full firm digitalization, we help companies operate with clarity and scale with confidence.",
+      "Today we work with startups and established businesses alike—as their external tech team—delivering premium digital products and the operational infrastructure that makes growth sustainable.",
+    ],
+  },
+  team: {
+    eyebrow: "Our team",
+    title: "The minds powering",
+    titleAccent: "your digital evolution.",
+    subtitle:
+      "Founders, engineers, and builders who combine technical depth with business sense—committed to partnerships that last well beyond launch day.",
+  },
+};
+
 // About page — mission, vision, values
 export const aboutMissionVisionValues: AboutPillar[] = [
   {
     title: "Mission",
     description:
-      "Deliver thoughtful digital products that merge technical rigor with creative clarity—so every brand we touch feels unmistakably itself online.",
+      "Help businesses digitalize and automate with clarity—unifying scattered operations into smart systems that teams actually enjoy using.",
   },
   {
     title: "Vision",
     description:
-      "To be a trusted partner for teams that care about craft: long-term relationships, transparent collaboration, and outcomes that age well.",
+      "To be the technology partner modern companies rely on: the external tech team that simplifies operations, builds lasting infrastructure, and grows with you.",
   },
   {
     title: "Values",
     description:
-      "Quality over volume, honesty in scope and timelines, and respect for your time—every pixel and line of code earns its place.",
+      "Partnership over transactions. Honest scope and timelines. Solutions that make business owners feel confident—not overwhelmed by jargon.",
   },
 ];
 
 // About page — expertise snapshot (philosophical angle; full grid lives on /expertise)
 export const aboutExpertiseSnapshot = {
-  headline: "Built for brands that want more than",
-  headlineAccent: "a template.",
-  body: "We sit at the intersection of engineering and design: performant stacks, accessible interfaces, and identities that stay coherent as you grow. Explore the full capability map when you are ready—we scale depth to match the engagement.",
+  headline: "Built for companies ready to move beyond",
+  headlineAccent: "manual chaos.",
+  body: "We partner with businesses that have outgrown spreadsheets, disconnected tools, and patchwork processes. From workflow automation to custom software and unified systems—we help you scale with technology that works for your team.",
   focusAreas: [
-    "Web & product UI",
-    "E‑commerce & platforms",
-    "Mobile experiences",
-    "Brand‑aligned systems",
-    "Performance & SEO",
-    "Ongoing partnership",
+    "Digital transformation",
+    "Workflow automation",
+    "Custom business software",
+    "Systems integration",
+    "AI & smart automation",
+    "Long-term tech partnership",
   ],
 };
 
 // About page — working together FAQ
 export const aboutFaqItems: AboutFaqItem[] = [
   {
-    question: "How do we start a project?",
+    question: "Are you a vendor or a long-term technology partner?",
     answer:
-      "We begin with a discovery call: goals, audience, constraints, and success criteria. From there we share a concise proposal—scope, milestones, and commercial terms—before any build work begins.",
+      "Both, depending on what you need—but our sweet spot is long-term partnership. We digitalize operations, automate workflows, and stay involved as your business evolves, not just at launch.",
+  },
+  {
+    question: "How do we start working together?",
+    answer:
+      "Book a consultation or demo call. We learn how your business runs today, where friction lives, and what success looks like. Then we propose a clear roadmap—phases, timelines, and deliverables—before any build begins.",
+  },
+  {
+    question: "Can we see examples of your digitalization work?",
+    answer:
+      "Our public portfolio shows a selection of projects. Many firm digitalization builds are under NDA—we walk through those privately on a demo call so you can see relevant work without compromising client confidentiality.",
   },
   {
     question: "What does communication look like during delivery?",
     answer:
-      "You get regular checkpoints, async updates, and a single clear thread for decisions. Larger engagements include structured design reviews and incremental demos so feedback lands at the right time.",
+      "You get regular checkpoints, async updates, and one clear decision thread. Larger engagements include design reviews and incremental demos so your team stays aligned without surprise at the finish line.",
   },
   {
-    question: "Typical timelines and how changes are handled",
+    question: "What happens after go-live?",
     answer:
-      "Timelines depend on scope; we quote phases with dates, not vague ranges. Scope changes go through a short change request so priorities, cost, and schedule stay aligned.",
-  },
-  {
-    question: "What do you need from us as a client?",
-    answer:
-      "A point of contact for decisions, brand assets when relevant, and timely feedback on reviews. The smoother the inputs, the faster we ship without compromising quality.",
-  },
-  {
-    question: "Support after launch",
-    answer:
-      "We offer handover documentation and can agree on a support window or retainer for updates, monitoring, and iteration—tailored to how you operate.",
+      "We provide documentation, handover, and optional ongoing support or retainer arrangements—updates, monitoring, and iteration as your operations grow and change.",
   },
 ];
 

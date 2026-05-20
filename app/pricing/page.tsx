@@ -1,9 +1,14 @@
-import Pricing from '@/components/pricing/Pricing'
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-   <Pricing/>
-  )
+// Pricing page temporarily disabled — redirect to contact for consultations
+export default function PricingPage() {
+  redirect("/contact");
 }
 
-export default page
+/* Previous implementation:
+import Pricing from '@/components/pricing/Pricing'
+
+export default function Page() {
+  return <Pricing />
+}
+*/

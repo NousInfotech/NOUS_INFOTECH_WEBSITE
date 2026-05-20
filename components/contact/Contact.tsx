@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+import CalendlyLink from "../common/CalendlyLink";
 import { PageWrapper } from '../animation/PageWrapper'
 import { ScrollReveal } from '../animation/ScrollReveal'
 import ContactForm from '../common/Contact';
@@ -19,14 +21,18 @@ const Contact = () => {
                 </div>
                 
                 <h1 className="text-3xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
-                  Let&apos;s  
-                  <span className="text-primary"> Talk.</span>
+                  Let&apos;s discuss your{" "}
+                  <span className="text-primary">digital future.</span>
                 </h1>
                 
-                <p className="text-sm text-foreground/50 max-w-md leading-relaxed">
-                  Have a vision? We have the expertise to bring it to life. 
-                  Reach out and let&apos;s start building something extraordinary.
+                <p className="text-sm md:text-base text-foreground/50 max-w-md leading-relaxed">
+                  Book a consultation to explore digital transformation, workflow
+                  automation, or a custom project. Tell us what&apos;s slowing your
+                  business down—we&apos;ll help you see a clearer path forward.
                 </p>
+                <CalendlyLink className="inline-flex text-sm font-medium text-primary hover:underline">
+                  Schedule on Calendly →
+                </CalendlyLink>
               </div>
             </ScrollReveal>
 
