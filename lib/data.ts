@@ -337,7 +337,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ali Akram",
     role: "Co-Founder & CTO",
-    image: "/team/aliakram-new.png",
+    image: "/team/ali-new.jpeg",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/ali-akram-2729ba282/' },
       { platform: 'twitter', url: 'https://x.com/Akram_010101'},
