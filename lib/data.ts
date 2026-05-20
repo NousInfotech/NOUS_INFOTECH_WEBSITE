@@ -355,7 +355,7 @@ export const teamMembers: TeamMember[] = [
     role: "Full Stack Developer",
     image: "/team/kannan.png",
     socials: [
-      {platform: 'linkedin', url: 'https://www.linkedin.com/in/kannan-r-32a121378/' },
+      {platform: 'linkedin', url: 'https://www.linkedin.com/in/kannan-ravi-32a121378/' },
       {platform: 'twitter', url: 'https://x.com/KannanRavi14140'},
       {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
     ]
