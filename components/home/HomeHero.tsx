@@ -80,16 +80,15 @@ useEffect(() => {
             className='space-y-7'
           >
             <p className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-primary font-semibold">
-              Technology Partner · Digital Transformation
+              Digital Marketing & Technology Partner
             </p>
             <h1 className="text-2xl md:text-5xl lg:text-7xl  leading-[1.05] tracking-tighter font-medium">
-              Your Technology Partner for{" "}
-              <span className="text-primary">Digital Growth</span>
+              Scale Your Business with{" "}
+              <span className="text-primary">Expert Solutions</span>
             </h1>
             <p className="text-sm md:text-xl text-foreground/70 max-w-2xl leading-relaxed font-light">
-              We transform scattered operations into smart digital systems—helping
-              businesses digitalize, automate workflows, and scale with a team that
-              works like your external tech department.
+              We transform your online presence into revenue—helping businesses drive leads, 
+              automate workflows, and scale effortlessly with high-converting digital strategies.
             </p>
             <div className="flex md:flex-row flex-col gap-4">
               <CalendlyLink>

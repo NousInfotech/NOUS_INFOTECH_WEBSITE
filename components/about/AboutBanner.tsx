@@ -67,20 +67,22 @@ export default function AboutBanner() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative group"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
-          <div className="border-beam rounded-3xl p-[2px] border-primary">
-              <div className="border-beam-content rounded-[calc(1.5rem-2px)] relative aspect-4/5 md:aspect-square overflow-hidden shadow-2xl">
-              <Image
-                src={banner.leaderImage}
-                alt={`${banner.leaderName}, ${banner.leaderRole}`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-background/40 via-transparent to-transparent opacity-60" />
+          {banner.leaders.map((leader, idx) => (
+            <div key={idx} className="border-beam rounded-3xl p-[2px] border-primary">
+                <div className="border-beam-content rounded-[calc(1.5rem-2px)] relative aspect-4/5 overflow-hidden shadow-2xl group">
+                <Image
+                  src={leader.image}
+                  alt={`${leader.name}, ${leader.role}`}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-background/40 via-transparent to-transparent opacity-60" />
+              </div>
             </div>
-          </div>
+          ))}
         </motion.div>
 
         <div className="space-y-5">
@@ -120,11 +122,15 @@ export default function AboutBanner() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-5"
           >
-            <div>
-              <h3 className="text-xl font-medium">{banner.leaderName}</h3>
-              <p className="text-primary font-medium uppercase tracking-widest text-xs">
-                {banner.leaderRole}
-              </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              {banner.leaders.map((leader, idx) => (
+                <div key={idx}>
+                  <h3 className="text-xl font-medium">{leader.name}</h3>
+                  <p className="text-primary font-medium uppercase tracking-widest text-xs">
+                    {leader.role}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="space-y-4">

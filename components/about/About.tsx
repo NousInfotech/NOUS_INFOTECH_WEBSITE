@@ -17,7 +17,7 @@ const About = () => {
         <AboutBanner />
         <AboutStory />
         <AboutMissionVision />
-        <AboutTeamCard />
+        {/* <AboutTeamCard /> */}
         <AboutExpertiseSnapshot />
         <AboutFaq />
         <Testimonials />

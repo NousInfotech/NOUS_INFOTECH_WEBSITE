@@ -18,12 +18,12 @@ const HomeExpertise = () => {
             <div className="flex md:flex-row flex-col items-start gap-6 md:items-end justify-between">
               <div className="space-y-4 max-w-4xl">
                 <h2 className="text-2xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tighter">
-                  From manual workflows to{" "}
-                  <span className="text-primary">automated businesses.</span>
+                  From digital presence to{" "}
+                  <span className="text-primary">profitable growth.</span>
                 </h2>
                 <p className="text-sm md:text-lg text-foreground/60 font-light max-w-2xl">
-                  Solution-oriented capabilities—not a service checklist. We organize,
-                  automate, and build the digital infrastructure modern companies need to grow.
+                  Growth-oriented solutions—not just a service checklist. We market,
+                  automate, and build the digital infrastructure modern companies need to scale revenue.
                 </p>
               </div>
               <Link href="/expertise" className="hidden md:block shrink-0">

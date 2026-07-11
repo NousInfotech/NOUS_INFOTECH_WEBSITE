@@ -70,26 +70,26 @@ function DigitalizeDemoContent() {
 
                 <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-tighter">
                   See our{" "}
-                  <span className="text-primary">digitalization demos</span> live
+                  <span className="text-primary">growth campaigns</span> live
                 </h2>
 
                 <p className="text-sm md:text-lg text-foreground/70 font-light leading-relaxed max-w-xl">
-                  Many of our strongest firm digitalization projects—custom software,
-                  automation, and unified operations—can&apos;t be published online due to
+                  Many of our strongest growth campaigns—including SEO strategies, 
+                  lead generation systems, and custom software—can&apos;t be published online due to
                   client NDAs and confidentiality agreements.
                 </p>
 
                 <p className="text-sm md:text-base text-foreground/60 font-light leading-relaxed max-w-xl">
                   Book a private demo call and we&apos;ll walk you through real examples:
-                  how we transformed scattered workflows, built internal systems, and helped
-                  businesses run smarter—without exposing client identities or sensitive data.
+                  how we transformed online presence, generated high-quality leads, and helped
+                  businesses scale revenue—without exposing client identities or sensitive data.
                 </p>
 
                 <ul className="space-y-3 pt-2">
                   {[
-                    "Live walkthrough of past digitalization work",
-                    "Before/after operational impact (shared under NDA)",
-                    "Q&A tailored to your industry and challenges",
+                    "Live walkthrough of past growth campaigns",
+                    "Before/after revenue impact (shared under NDA)",
+                    "Q&A tailored to your industry and scaling goals",
                   ].map((item) => (
                     <li
                       key={item}

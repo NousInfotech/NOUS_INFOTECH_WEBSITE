@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Layers, Workflow, Handshake } from 'lucide-react';
+import { ArrowRight, Megaphone, TrendingUp, Layers } from 'lucide-react';
 import { Button } from '../ui/Button';
 import Link from 'next/link';
 import CalendlyLink from '../common/CalendlyLink';
@@ -29,9 +29,9 @@ const HomeAbout = () => {
   }, []);
 
   const features = [
-    { icon: Layers, text: 'Digital Transformation', delay: 0.3 },
-    { icon: Workflow, text: 'Workflow Automation', delay: 0.4 },
-    { icon: Handshake, text: 'Long-Term Partnership', delay: 0.5 },
+    { icon: Megaphone, text: 'Digital Marketing', delay: 0.3 },
+    { icon: TrendingUp, text: 'Lead Generation', delay: 0.4 },
+    { icon: Layers, text: 'Digital Transformation', delay: 0.5 },
   ];
 
   return (
@@ -45,24 +45,23 @@ const HomeAbout = () => {
         <div className="relative mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
                  <div className='flex flex-col items-start'>
-                  <Badge>Your Technology Partner</Badge>
+                  <Badge>Your Growth Partner</Badge>
                   <span className="text-2xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tighter">
-                    We transform scattered operations into{" "}
-                    <span className="text-primary">smart digital systems.</span>
+                    We turn your online presence into{" "}
+                    <span className="text-primary">scalable revenue.</span>
                   </span>
                </div>
              {/* Right Column - Content */}
               <div className="space-y-8">
                 <p className="text-sm md:text-xl leading-relaxed text-foreground/80 font-light">
-                  Many businesses run on manual workflows, disconnected tools, and
+                  Many businesses struggle with poor online visibility, low conversion rates, and 
                   operational clutter. We step in as your{" "}
                   <span className="font-medium text-foreground">
-                    long-term technology partner
+                    long-term growth partner
                   </span>
-                  —digitalizing processes, automating what slows you down, and building
-                  unified systems your team can rely on. From startups to established
-                  companies, we help you scale with technology that feels simple, not
-                  overwhelming.
+                  —driving high-quality leads, running profitable marketing campaigns, and building
+                  the digital systems your team needs to scale. From startups to established
+                  companies, we help you dominate your market and grow revenue efficiently.
                 </p>
               {/* Feature Pills */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -85,7 +84,7 @@ const HomeAbout = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <CalendlyLink>
                     <Button className="md:w-auto w-full">
-                      Discuss Digital Transformation
+                      Discuss Your Growth Plan
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                   </CalendlyLink>

@@ -17,6 +17,7 @@ import {
   Workflow,
   Handshake,
   Palette,
+  Megaphone,
 } from "lucide-react";
 
 export const navLinks = [
@@ -151,6 +152,19 @@ export const projects: Project[] = [
 
 // Expertise Data — solution-oriented for technology partnership positioning
 export const expertiseData: Expertise[] = [
+  {
+    title: "Digital Marketing & Growth",
+    description:
+      "Data-driven marketing, SEO, and lead generation campaigns designed to skyrocket your revenue and dominate your market.",
+    icon: Megaphone,
+    color: "from-blue-500/20 to-indigo-500/20",
+    points: [
+      "High-converting paid ad campaigns",
+      "SEO & organic traffic growth",
+      "Conversion rate optimization (CRO)",
+      "End-to-end lead generation systems",
+    ],
+  },
   {
     title: "Digital Transformation & Operations",
     description:
@@ -459,13 +473,22 @@ export const aboutPageContent = {
   banner: {
     eyebrow: "About Nous Infotech",
     headline: "Your technology partner for",
-    headlineAccent: "real business transformation.",
+    headlineAccent: "scalable digital growth & revenue.",
     description:
-      "We are a focused team of engineers, designers, and strategists who help companies escape manual chaos—digitalizing operations, automating workflows, and building software that becomes the backbone of how you grow.",
+      "We are a focused team of marketers, engineers, and strategists who help companies skyrocket their ROI—driving high-quality leads, automating workflows, and building digital systems that become the backbone of how you scale.",
     leaderSectionEyebrow: "Together we can achieve more",
-    leaderName: "Suhail",
-    leaderRole: "Founder & CEO",
-    leaderImage: "/team/nous-ceo1.png",
+    leaders: [
+      {
+        name: "Suhail Ahamed",
+        role: "Co-Founder & Business Development Director",
+        image: "/team/suhail.jpeg",
+      },
+      {
+        name: "Rasmiya Ayoub",
+        role: "Co-Founder & Technical Director",
+        image: "/team/rasmi_founder.jpeg",
+      }
+    ],
     leaderQuote:
       "If you can dream about it, if you can picture it in your mind",
     leaderQuoteAccent: "THEN YOU CAN ACHIEVE IT",
@@ -473,18 +496,18 @@ export const aboutPageContent = {
     leaderTaglineAccent: "with Purpose.",
   },
   highlights: [
+    { title: "Market", description: "Data-driven lead generation" },
+    { title: "Convert", description: "High-ROI digital strategies" },
     { title: "Automate", description: "Workflows & manual operations" },
-    { title: "Integrate", description: "Scattered tools & systems" },
-    { title: "Partner", description: "Long-term technology support" },
-    { title: "Build", description: "Custom apps & digital products" },
+    { title: "Build", description: "Custom apps & unified systems" },
   ],
   story: {
     title: "The story",
     titleAccent: "behind Nous.",
     paragraphs: [
-      "Nous Infotech started with a simple observation: too many capable businesses were held back not by ambition, but by scattered tools, manual processes, and technology that never quite fit how they actually worked.",
-      "We set out to be different—not another vendor shipping templates, but a long-term partner that listens first, designs with intent, and builds systems teams trust. From workflow automation and custom dashboards to full firm digitalization, we help companies operate with clarity and scale with confidence.",
-      "Today we work with startups and established businesses alike—as their external tech team—delivering premium digital products and the operational infrastructure that makes growth sustainable.",
+      "Nous Infotech started with a simple observation: too many businesses were leaving money on the table due to poor online visibility, scattered tools, and technology that failed to convert.",
+      "We set out to be different—not another vendor shipping templates, but a long-term growth partner that listens first, designs with intent, and builds systems that drive revenue. From high-converting digital marketing and workflow automation to full firm digitalization, we help companies attract customers and scale with confidence.",
+      "Today we work with startups and established businesses alike—as their external growth and tech team—delivering premium digital experiences and the operational infrastructure that makes scaling effortless.",
     ],
   },
   team: {
@@ -518,15 +541,15 @@ export const aboutMissionVisionValues: AboutPillar[] = [
 // About page — expertise snapshot (philosophical angle; full grid lives on /expertise)
 export const aboutExpertiseSnapshot = {
   headline: "Built for companies ready to move beyond",
-  headlineAccent: "manual chaos.",
-  body: "We partner with businesses that have outgrown spreadsheets, disconnected tools, and patchwork processes. From workflow automation to custom software and unified systems—we help you scale with technology that works for your team.",
+  headlineAccent: "stagnation and manual chaos.",
+  body: "We partner with businesses that are ready to scale their revenue, dominate their market, and outgrow disconnected tools. From lead generation to custom software and unified systems—we help you grow with technology and strategies that actually convert.",
   focusAreas: [
+    "Digital marketing & growth",
+    "Lead generation & SEO",
     "Digital transformation",
     "Workflow automation",
     "Custom business software",
-    "Systems integration",
-    "AI & smart automation",
-    "Long-term tech partnership",
+    "Long-term growth partnership",
   ],
 };
 

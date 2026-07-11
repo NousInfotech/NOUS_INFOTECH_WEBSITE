@@ -36,12 +36,12 @@ export default function HomeConsultCTA({ variant = "primary" }: HomeConsultCTAPr
                 }`}
               >
                 Let&apos;s map your{" "}
-                <span className="text-primary">digital transformation</span> together
+                <span className="text-primary">growth strategy</span> together
               </h2>
               <p className="text-sm md:text-lg text-foreground/70 font-light leading-relaxed">
-                Tell us where operations feel scattered, manual, or disconnected.
-                We&apos;ll help you see what unified systems and automation could look
-                like—for your team, your workflows, and your growth.
+                Tell us where you want to scale your revenue.
+                We&apos;ll help you see what high-converting digital marketing, unified systems, and automation could look
+                like—for your team, your leads, and your growth.
               </p>
             </div>
 
