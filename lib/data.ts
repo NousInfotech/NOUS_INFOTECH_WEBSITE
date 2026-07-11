@@ -35,118 +35,132 @@ export const navLinks = [
 
 // Projects Data
 export const projects: Project[] = [
-{
-  title: "VACEI",
-  category: "Platform | Web Development",
-  image: "/project-images/vacei.png",
-  link: "https://vacei.com/",
-  year: 2025,
-},
-{
-  title: "Space Sculpt",
-  category: "Website | Development",
-  image: "/project-images/spacesculpt.png",
-  link: "https://space-sculpt.vercel.app/",
-  year: 2024,
-},
-{
-  title: "DBQ Pro",
-  category: "Website | Development",
-  image: "/project-images/dbq-pro.png",
-  link: "https://dbq-pro-puce.vercel.app/",
-  year: 2023,
-},
-{
-  title: "LED Display UAE",
-  category: "Website | Development",
-  image: "/project-images/uae-led.png",
-  link: "https://www.leddisplayuae.com/",
-  year: 2022,
-},
-{
-  title: "Alghwasa",
-  category: "Website | Development",
-  image: "/project-images/alghwasa.png",
-  link: "https://www.alghwasa.com/",
-  year: 2024,
-},
-{
-  title: "Honesty Engineering Works",
-  category: "Website | Development",
-  image: "/project-images/honesty.png",
-  link: "https://www.honestyengineering.in/",
-  year: 2021,
-},
-{
-  title: "Pop and Palm",
-  category: "Website | Development",
-  image: "/project-images/pop-and-palm.png",
-  link: "https://www.popandpalmevents.com/",
-  year: 2023,
-},
-{
-  title: "Pixel World",
-  category: "Website | Development",
-  image: "/project-images/pixel-world.png",
-  link: "https://www.pixelworld.ae/",
-  year: 2024,
-},
-{
-  title: "EOM",
-  category: "Website | Development",
-  image: "/project-images/eom.png",
-  link: "https://www.entrepreneursofmadras.com/",
-  year: 2023,
-},
-{
-  title: "SunnySide Up",
-  category: "Website | Development",
-  image: "/project-images/sunny-side.png",
-  link: "https://sunnysidecafe.vercel.app/",
-  year: 2024,
-},
-{
-  title: "Kind Rice",
-  category: "Website | Development",
-  image: "/project-images/kind-rice.png",
-  link: "https://www.kindrice.co/",
-  year: 2022,
-},
-{
-  title: "Zarak Media",
-  category: "Website | Development",
-  image: "/project-images/zarak.png",
-  link: "https://codeerr-sid.github.io/Zarak_Media/",
-  year: 2021,
-},
-{
-  title: "Braai Shack",
-  category: "Website | Development",
-  image: "/project-images/braai.png",
-  link: "https://braaishack.vercel.app/",
-  year: 2024,
-},
-{
-  title: "Sri Varsha",
-  category: "Website | Development",
-  image: "/project-images/srivarsha.png",
-  link: "https://sri-varsha.vercel.app/index.html",
-  year: 2020,
-},
-{
-  title: "Prepco Healthcare",
-  category: "Website | Development",
-  image: "/project-images/prepco.png",
-  link: "https://prepcohealthcare.com/",
-  year: 2023,
-},
-{
-  title: "Last Bite India",
-  category: "App | Development",
-  image: "/project-images/last-bite-2.jpeg",
-  link: "https://play.google.com/store/apps/details?id=com.nous.lastbite",
-  year: 2024,
-}
+  {
+    title: "VACEI",
+    category: "Platform | Web Development",
+    image: "/project-images/vacei.png",
+    link: "https://vacei.com/",
+    year: 2025,
+  },
+  {
+    title: "A4 Services",
+    category: "Platform | Web Development",
+    image: "/project-images/a4-website.png",
+    link: "https://a4-website-kappa.vercel.app/en",
+    year: 2025,
+  },
+  {
+    title: "Sheetsway",
+    category: "Platform | Web Development",
+    image: "/project-images/sheetsway.png",
+    link: "https://www.sheetsway.com/",
+    year: 2025,
+  },
+  // {
+  //   title: "Space Sculpt",
+  //   category: "Website | Development",
+  //   image: "/project-images/spacesculpt.png",
+  //   link: "https://space-sculpt.vercel.app/",
+  //   year: 2024,
+  // },
+  // {
+  //   title: "DBQ Pro",
+  //   category: "Website | Development",
+  //   image: "/project-images/dbq-pro.png",
+  //   link: "https://dbq-pro-puce.vercel.app/",
+  //   year: 2023,
+  // },
+  // {
+  //   title: "LED Display UAE",
+  //   category: "Website | Development",
+  //   image: "/project-images/uae-led.png",
+  //   link: "https://www.leddisplayuae.com/",
+  //   year: 2022,
+  // },
+  {
+    title: "Alghwasa",
+    category: "Website | Development",
+    image: "/project-images/alghwasa.png",
+    link: "https://www.alghwasa.com/",
+    year: 2024,
+  },
+  // {
+  //   title: "Honesty Engineering Works",
+  //   category: "Website | Development",
+  //   image: "/project-images/honesty.png",
+  //   link: "https://www.honestyengineering.in/",
+  //   year: 2021,
+  // },
+  // {
+  //   title: "Pop and Palm",
+  //   category: "Website | Development",
+  //   image: "/project-images/pop-and-palm.png",
+  //   link: "https://www.popandpalmevents.com/",
+  //   year: 2023,
+  // },
+  {
+    title: "Pixel World",
+    category: "Website | Development",
+    image: "/project-images/pixel-world.png",
+    link: "https://www.pixelworld.ae/",
+    year: 2024,
+  },
+  {
+    title: "EOM",
+    category: "Website | Development",
+    image: "/project-images/eom.png",
+    link: "https://www.entrepreneursofmadras.com/",
+    year: 2023,
+  },
+  {
+    title: "SunnySide Up",
+    category: "Website | Development",
+    image: "/project-images/sunny-side.png",
+    link: "https://sunnysidecafe.vercel.app/",
+    year: 2024,
+  },
+  // {
+  //   title: "Kind Rice",
+  //   category: "Website | Development",
+  //   image: "/project-images/kind-rice.png",
+  //   link: "https://www.kindrice.co/",
+  //   year: 2022,
+  // },
+  {
+    title: "Zarak Media",
+    category: "Website | Development",
+    image: "/project-images/zarak.png",
+    link: "https://codeerr-sid.github.io/Zarak_Media/",
+    year: 2021,
+  },
+  {
+    title: "Braai Shack",
+    category: "Website | Development",
+    image: "/project-images/braai.png",
+    link: "https://braaishack.vercel.app/",
+    year: 2024,
+  },
+  // {
+  //   title: "Sri Varsha",
+  //   category: "Website | Development",
+  //   image: "/project-images/srivarsha.png",
+  //   link: "https://sri-varsha.vercel.app/index.html",
+  //   year: 2020,
+  // },
+  {
+    title: "Prepco Healthcare",
+    category: "Website | Development",
+    image: "/project-images/prepco.png",
+    link: "https://prepcohealthcare.com/",
+    year: 2023,
+  },
+  {
+    title: "Last Bite India",
+    category: "App | Development",
+    image: "/project-images/last-bite-2.jpeg",
+    link: "https://play.google.com/store/apps/details?id=com.nous.lastbite",
+    year: 2024,
+  }
 
 ];
 
@@ -339,14 +353,14 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ali Akram",
     role: "Co-Founder & CTO",
-    image: "/team/aliakram-new.png",
+    image: "/team/ali-new.jpeg",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/ali-akram-2729ba282/' },
-      { platform: 'twitter', url: 'https://x.com/Akram_010101'},
+      { platform: 'twitter', url: 'https://x.com/Akram_010101' },
       { platform: 'instagram', url: 'https://www.instagram.com/akram_ackerman_?igsh=MXJkOHU5aXY2MW91eA==' },
     ]
-   },
-    {
+  },
+  {
     name: "Rasmiya Ayoub",
     role: "Co-Founder & Team Lead",
     image: "/team/rasmi_founder.jpeg",
@@ -354,14 +368,14 @@ export const teamMembers: TeamMember[] = [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/rasmiya-ayoub/' },
     ]
   },
-    {
+  {
     name: "Siddique",
     role: "Backend Developer",
     image: "/team/sidd.png",
     socials: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/siddiqueofl/' },
       { platform: 'twitter', url: 'https://x.com/siddiqueofl' },
-      { platform: 'instagram', url: 'https://www.instagram.com/siddique.ofl?igsh=Njh2a2pndGRpb2Rk'}
+      { platform: 'instagram', url: 'https://www.instagram.com/siddique.ofl?igsh=Njh2a2pndGRpb2Rk' }
     ]
   },
   {
@@ -369,11 +383,11 @@ export const teamMembers: TeamMember[] = [
     role: "Full Stack Developer",
     image: "/team/kannan.png",
     socials: [
-      {platform: 'linkedin', url: 'https://www.linkedin.com/in/kannan-r-32a121378/' },
+      {platform: 'linkedin', url: 'https://www.linkedin.com/in/kannan-ravi-32a121378/' },
       {platform: 'twitter', url: 'https://x.com/KannanRavi14140'},
       {platform: 'instagram', url: 'https://www.instagram.com/k_a_n_n_a_n___14?utm_source=qr&igsh=MWdycnZleGQ3djRyZA=='}
     ]
-   },
+  },
   //     {
   //   name: "Sivajnanam S",
   //   role: "Full Stack Developer",
