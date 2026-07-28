@@ -12,6 +12,7 @@ const Hire = () => {
       sidebarSubtitle={<>Project <span className="text-primary">Inquiry</span></>}
       sidebarDescription="Share your goals, timeline, and requirements. Whether it's a one-off build or the start of a bigger digital journey, we're here to help."
       submitText="Submit Inquiry"
+      redirectTo="/thank-you/hire-us"
       sections={[
         {
           title: "Service Categories",

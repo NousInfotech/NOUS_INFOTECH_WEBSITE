@@ -65,7 +65,7 @@ const Contact = () => {
             <div className="relative">
               {/* Decorative background element for the form */}
               <div className="absolute -inset-4 bg-primary/5 blur-3xl rounded-full -z-10 opacity-50" />
-              <ContactForm submitText="Send Message"/>
+              <ContactForm submitText="Send Message" redirectTo="/thank-you/contact" />
             </div>
           </ScrollReveal>
         </div>

@@ -7,15 +7,19 @@ import { sendFormData, FormPayload } from "@/api/sendFormData";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFormContext } from "@/context/FormContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ContactForm = ({ 
   submitText, 
-  onSubmitFn = sendFormData
+  onSubmitFn = sendFormData,
+  redirectTo,
 }: { 
   submitText: string,
-  onSubmitFn?: (payload: FormPayload) => Promise<void>
+  onSubmitFn?: (payload: FormPayload) => Promise<void>,
+  redirectTo?: string
 }) => {
   const { state } = useFormContext();
+  const router = useRouter();
   
   const [form, setForm] = useState({
     name: "",
@@ -94,8 +98,12 @@ const ContactForm = ({
       // Context state is usually kept or reset depending on UX preference.
       // We'll keep it for now as it reflects the UI selections.
       
-      // Reset success status after 5 seconds to allow for new submissions
-      setTimeout(() => setStatus("idle"), 5000);
+      if (redirectTo) {
+        router.push(redirectTo);
+      } else {
+        // Reset success status after 5 seconds to allow for new submissions
+        setTimeout(() => setStatus("idle"), 5000);
+      }
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");

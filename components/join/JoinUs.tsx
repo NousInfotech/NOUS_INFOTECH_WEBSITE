@@ -19,6 +19,7 @@ const JoinUs = () => {
       sidebarDescription="Whether you are a freelancer looking for a partnership or a professional seeking a full-time role, we want to hear from you."
       submitText="Send Application"
       onSubmitFn={handleJoinSubmit}
+      redirectTo="/thank-you/join-us"
       sections={[
         {
           title: "Role Interest",

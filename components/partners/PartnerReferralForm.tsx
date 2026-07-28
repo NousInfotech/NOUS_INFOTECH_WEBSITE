@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { sendFormData } from "@/api/sendFormData";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const BUSINESS_TYPES = [
   "Accounting Firm",
@@ -40,6 +41,7 @@ const PartnerReferralForm = () => {
     "idle"
   );
   const [errorMessage, setErrorMessage] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -79,6 +81,8 @@ const PartnerReferralForm = () => {
       setEmail("");
       setBusinessType(BUSINESS_TYPES[0]);
       setProblem(PROBLEMS[0]);
+      
+      router.push("/thank-you/partner-referral");
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");

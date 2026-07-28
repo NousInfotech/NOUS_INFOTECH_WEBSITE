@@ -21,6 +21,7 @@ interface InquiryLayoutProps {
   sections: SectionData[];
   submitText: string;
   onSubmitFn?: (payload: FormPayload) => Promise<void>;
+  redirectTo?: string;
 }
 
 const InquiryContent = ({
@@ -31,6 +32,7 @@ const InquiryContent = ({
   sections,
   submitText,
   onSubmitFn,
+  redirectTo,
 }: InquiryLayoutProps) => {
   const { state, setCategory, setBudget, setRole, setType } = useFormContext();
 
@@ -98,7 +100,7 @@ const InquiryContent = ({
             })}
           </div>
 
-          <ContactForm submitText={submitText} onSubmitFn={onSubmitFn} />
+          <ContactForm submitText={submitText} onSubmitFn={onSubmitFn} redirectTo={redirectTo} />
         </div>
       </section>
     </PageWrapper>
