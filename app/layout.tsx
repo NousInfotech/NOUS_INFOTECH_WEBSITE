@@ -7,7 +7,6 @@ import { IntroAnimation } from "@/components/animation/IntroAnimation";
 import { SmoothScroll } from "@/components/animation/SmoothScroll";
 import { FloatingActions } from "@/components/common/FloatingActions";
 import Script from "next/script";
- 
 
 export const metadata: Metadata = {
   title: "NOUS INFOTECH | Technology Partner for Digital Growth",
@@ -23,7 +22,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <Script
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M3DTHRNM');
+          `}
+        </Script>
+
+        {/* Microsoft Clarity */}
+        <Script
           id="clarity-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -37,15 +54,30 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`antialiased bg-background text-foreground transition-colors duration-300`}>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={true}>
+
+      <body className="antialiased bg-background text-foreground transition-colors duration-300">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M3DTHRNM"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="dark"
+          enableSystem={true}
+        >
           <IntroAnimation>
-          <SmoothScroll>
-            <Navbar /> 
-            <main>{children}</main>
-            <Footer />
-            <FloatingActions />
-          </SmoothScroll>
+            <SmoothScroll>
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+              <FloatingActions />
+            </SmoothScroll>
           </IntroAnimation>
         </ThemeProvider>
       </body>
